@@ -1,0 +1,130 @@
+@media screen and (max-width: 991px) {
+
+    main .product-filter-d {
+        display: none;
+        width: 75%;
+        background-color: #f2f2f2;
+        z-index: 2;
+        right: 0;
+        border-radius: 10px;
+        border-left: 3px solid #b19361;
+        border-bottom: 3px solid #b19361;
+    }
+
+    main .product-filter-d .product-filter_title {
+        color: #b19361;
+    }
+
+    main .product-filter-d .filter-price .minimum-price,
+    main .product-filter-d .filter-price .maximum-price {
+        width: 40%;
+        background-color: #f2f2f2;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+        outline: none;
+    }
+
+    main .product-filter-d .filter-feedback .yellow-star {
+        color: #b19361;
+    }
+
+    main .product-filter-d .filter-category select,
+    main .product-filter-d .filter-arrange select {
+        background-color: #b19361;
+        color: #fff;
+        border-radius: 10px;
+        outline: none;
+    }
+
+    main .product-filter-d .reset,
+    main .product-filter-d .submit {
+        background-color: #b19361;
+        color: #fff;
+        border-color: #b19361;
+        border-radius: 10px;
+    }
+
+    main .contact .contact-feedback .contact-name_input,
+    main .contact .contact-feedback .contact-email_input {
+        width: 100%;
+    }
+
+    main .contact-map {
+        height: 300px;
+    }
+
+    main .cart .cart-table table {
+        width: 100%;
+    }
+
+    main .cart .cart-table {
+        overflow-x: scroll;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    main .category .category-image_big div {
+        height: 500px;
+    }
+
+    main .category .category-image div {
+        height: 238px;
+    }
+
+    main .category .category-image,
+    main .category .category-image_big {
+        margin-bottom: 24px;
+    }
+
+    main .contact .contact-map {
+        height: 500px;
+    }
+
+    main .checkout .billing-details_city,
+    main .checkout .billing-details_district,
+    main .checkout .billing-details_ward {
+        width: 30%;
+    }
+
+    main .checkout .billing-details_name .first-name,
+    main .checkout .billing-details_name .last-name,
+    main .checkout .billing-details_phoneMail .phone,
+    main .checkout .billing-details_phoneMail .mail {
+        width: 45%;
+    }
+
+    main .cart .cart-table table {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    main .category .category-image_big div {
+        height: 300px;
+    }
+
+    main .category .category-image div {
+        height: 200px;
+    }
+
+    main .category .category-image,
+    main .category .category-image_big {
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main .category .category-image_big div {
+        height: 300px;
+    }
+
+    main .category .category-image div {
+        height: 300px;
+    }
+
+    main .category .category-image,
+    main .category .category-image_big {
+        margin-bottom: 24px;
+    }
+}

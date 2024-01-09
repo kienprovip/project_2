@@ -1,0 +1,1252 @@
+:root {
+    --main-color: #b19361;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+nav {
+    background-color: #fef5ef;
+}
+
+nav .navbar-brand {
+    height: 114px;
+    top: 0;
+}
+
+nav .navbar-brand img {
+    height: 80%;
+    width: auto;
+    border-radius: 50%;
+}
+
+nav ul.d-flex,
+nav ul.d-none {
+    list-style-type: none;
+}
+
+nav .nav-link i {
+    font-size: 21px;
+}
+
+nav .nav-item span.notification {
+    font-size: 10px;
+}
+
+
+header .navbar .nav-item .nav-link {
+    font-weight: bold;
+}
+
+header .navbar .nav-item .nav-link:hover,
+header .navbar .nav-item .nav-link i:hover {
+    color: #b19361;
+}
+
+header div.search {
+    background-color: #fef5ef;
+}
+
+header div.search button {
+    border: none;
+    border-radius: 50%;
+    height: 25.6px;
+    background-color: #f2f2f2;
+    color: #b19361;
+}
+
+header div.search button:hover i {
+    font-weight: bold;
+}
+
+header div.search button i {
+    width: 24px;
+    height: 24px;
+}
+
+header div.search form input {
+    border: none;
+    border-bottom: 1px solid #b19361;
+    width: 100%;
+    background: none;
+    color: #b19361;
+    outline: none;
+}
+
+header div.search form input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #b19361;
+    background: none;
+    color: #b19361;
+}
+
+nav .nav-item span.nav-link:hover {
+    cursor: pointer;
+}
+
+main {
+    padding-top: 114px;
+}
+
+main .carousel-item {
+    background-color: #fef5ef;
+}
+
+main .carousel-item img {
+    height: 100vh;
+    width: auto;
+}
+
+main .home-service .image img {
+    max-width: 100%;
+}
+
+main .home-service p {
+    color: #777;
+}
+
+main .outstanding-products .card-body,
+main .best-seller .card-body,
+main .products .product .card-body {
+    height: 100px;
+}
+
+main .products .product .discount,
+main .outstanding-products .product .discount,
+main .best-seller .product .discount {
+    background-color: #b19361;
+    border-radius: 0.375rem 0 10px 0;
+    color: #fff;
+}
+
+main .outstanding-products .product:hover .buy-detail,
+main .best-seller .product:hover .buy-detail,
+main .products .product:hover .buy-detail {
+    display: flex !important;
+}
+
+main .outstanding-products .product:hover .card-content,
+main .best-seller .product:hover .card-content,
+main .products .product:hover .card-content {
+    display: none;
+}
+
+main .outstanding-products .buy-detail .add-to-cart a,
+main .outstanding-products .buy-detail .detail button,
+main .best-seller .buy-detail .add-to-cart a,
+main .best-seller .buy-detail .detail button,
+main .products .product .buy-detail .add-to-cart a,
+main .products .product .buy-detail .detail button {
+    background-color: #b19361;
+    border-radius: 50%;
+    border: 1px solid #b19361;
+    text-decoration: none;
+}
+
+main .outstanding-products .buy-detail .add-to-cart a:hover,
+main .outstanding-products .buy-detail .detail button:hover,
+main .best-seller .buy-detail .add-to-cart a:hover,
+main .best-seller .buy-detail .detail button:hover,
+main .products .product .buy-detail .add-to-cart a:hover,
+main .products .product .buy-detail .detail button:hover {
+    background: none;
+}
+
+main .outstanding-products .buy-detail .add-to-cart a:hover i,
+main .outstanding-products .buy-detail .detail button:hover i,
+main .best-seller .buy-detail .add-to-cart a:hover i,
+main .best-seller .buy-detail .detail button:hover i,
+main .products .product .buy-detail .add-to-cart a:hover i,
+main .products .product .buy-detail .detail button:hover i {
+    color: #b19361;
+}
+
+main .outstanding-products .buy-detail .add-to-cart i,
+main .outstanding-products .buy-detail .detail i,
+main .best-seller .buy-detail .add-to-cart i,
+main .best-seller .buy-detail .detail i,
+main .products .product .buy-detail .add-to-cart i,
+main .products .product .buy-detail .detail i {
+    display: block;
+    height: 24px;
+    width: 24px;
+    color: #fff;
+}
+
+main .outstanding-products .show-more button,
+main .best-seller .show-more button {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: #b19361;
+}
+
+main .outstanding-products .show-more button:hover,
+main .best-seller .show-more button:hover {
+    color: #000;
+}
+
+main .breadcrumb-section {
+    background-color: #fef5ef;
+}
+
+main .breadcrumb-section p a {
+    text-decoration: none;
+    color: #000;
+}
+
+main .breadcrumb-section p a:hover {
+    color: #b19361;
+}
+
+main .category .category-image_big div.w-100,
+main .category .category-image div.w-100 {
+    background-color: #dedbdb;
+}
+
+main .category .category-image_big img,
+main .category .category-image img {
+    height: 80%;
+    width: auto;
+}
+
+main .category .category-image button,
+main .category .category-image_big button {
+    display: none;
+    background-color: #b19361;
+    border: 1px solid #b19361;
+    color: #fff;
+    border-radius: 10px;
+}
+
+main .category .category-image:hover button,
+main .category .category-image_big:hover button {
+    display: block;
+}
+
+main .category .category-image button:hover,
+main .category .category-image_big button:hover {
+    background: none;
+    color: #b19361;
+}
+
+/* products */
+main .product-filter-lg {
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 10px;
+    border-right: 3px solid #b19361;
+    border-bottom: 3px solid #b19361;
+}
+
+main .product-filter-lg .product-filter_title {
+    color: #b19361;
+}
+
+main .product-filter-lg .filter-price {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+}
+
+main .product-filter-lg .filter-price span {
+    width: 10%;
+}
+
+main .product-filter-lg .filter-price .minimum-price,
+main .product-filter-lg .filter-price .maximum-price {
+    width: 42%;
+    background-color: #f2f2f2;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+    outline: none;
+    color: #b19361;
+}
+
+main .product-filter-lg .filter-price .minimum-price:focus,
+main .product-filter-lg .filter-price .maximum-price:focus {
+    color: #b19361;
+}
+
+main .product-filter-lg .filter-feedback {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+}
+
+main .product-filter-lg .filter-feedback .yellow-star {
+    color: #b19361;
+}
+
+main .product-filter-lg .filter-category select,
+main .product-filter-lg .filter-arrange select {
+    border-radius: 10px;
+    background-color: #b19361;
+    color: #fff;
+    border-color: #b19361;
+}
+
+main .product-filter-lg .filter-category select:hover,
+main .product-filter-lg .filter-arrange select:hover {
+    background-color: #fff;
+    color: #b19361;
+    cursor: pointer;
+}
+
+main .product-filter-lg .reset,
+main .product-filter-lg .submit {
+    background-color: #b19361;
+    border-color: #b19361;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #b19361;
+}
+
+main .product-filter-lg .reset:hover,
+main .product-filter-lg .submit:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+main .products-arrange {
+    background-color: #f2f2f2;
+    border-bottom: 3px solid #b19361;
+    height: 40px;
+    border-radius: 10px;
+}
+
+main .products-arrange .arrange-all,
+main .products-arrange .arrange-latest,
+main .products-arrange .arrange-bestseller,
+main .products-arrange .arrange-filter,
+main .products-arrange .arrange-price {
+    width: 20%;
+}
+
+main .products-arrange .arrange-all a,
+main .products-arrange .arrange-latest a,
+main .products-arrange .arrange-bestseller a,
+main .products-arrange .arrange-filter span,
+main .products-arrange .arrange-price a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+main .products .pageNumber button {
+    background-color: #b19361;
+    color: #fff;
+    border: 1px solid #b19361;
+}
+
+main .products .pageNumber button:hover {
+    background: none;
+    color: #b19361;
+}
+
+/* ------------------- */
+
+/* contact */
+
+main .contact .contact-feedback .contact-name_input,
+main .contact .contact-feedback .contact-email_input {
+    width: 45%;
+}
+
+main .contact .contact-feedback #contact-customer_name,
+main .contact .contact-feedback #contact-customer_email {
+    width: 80%;
+    margin-left: auto;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+    outline: none;
+    padding: 0 10px;
+}
+
+main .contact .contact-feedback #contact-customer_feedback {
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+
+main .contact .contact-feedback .contact-submit {
+    border-radius: 10px;
+    background-color: #b19361;
+    color: #fff;
+    border: 1px solid #b19361;
+}
+
+main .contact .contact-feedback .contact-reset:hover,
+main .contact .contact-feedback .contact-submit:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+main .box-img {
+    border: black solid 1px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+main .table-product {
+    display: flex;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    font-size: 14px;
+}
+
+main .product-quantity_value {
+    width: 40%;
+}
+
+/* footer */
+.footer {
+    background-color: #f6f6f6;
+}
+
+footer .footer .footer-menu ul,
+footer .footer .footer-category ul {
+    list-style-type: none;
+}
+
+/* user */
+.user-show {
+    display: none;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+main .user-show .user {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: #b19361 0px 50px 100px -20px, #b19361 0px 30px 60px -30px, #b19361 0px -2px 6px 0px inset;
+
+}
+
+main .user-show .user .user-profile {
+    display: flex;
+}
+
+main .user-show .user .user-profile .user-avatar {
+    width: 30%;
+}
+
+main .user-show .user .user-profile .user-avatar img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid #b19361;
+}
+
+main .user-show .user .user-function .user-function_list {
+    list-style-type: none;
+}
+
+main .user-show .user .user-function .user-function_list .user-function_item a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    background-color: #b19361;
+    border-radius: 10px;
+    border: 1px solid #b19361;
+}
+
+main .user-show .user .user-function .user-function_list .user-function_item a:hover,
+main .user-show .user .log button:hover,
+main .user-show .user .log a:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+main .user-show .user .log button,
+main .user-show .user .log a {
+    border: none;
+    background-color: #b19361;
+    color: #fff;
+    border: 1px solid #b19361;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+/* customer and admin message */
+.customerMessage-show,
+.adminMessage-show {
+    display: none;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+main .customerMessage-show .customerMessage,
+main .adminMessage-show .adminMessage {
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: #b19361 0px 50px 100px -20px, #b19361 0px 30px 60px -30px, #b19361 0px -2px 6px 0px inset;
+}
+
+main .customerMessage-show .customerMessage .admin-profile,
+main .adminMessage-show .adminMessage .customer-profile {
+    display: flex;
+    border-bottom: 3px solid #b19361;
+    border-radius: 10px;
+}
+
+main .customerMessage-show .customerMessage .admin-information,
+main .adminMessage-show .adminMessage .customer-information {
+    border-left: 3px solid #b19361;
+}
+
+main .customerMessage-show .customerMessage .admin-profile .customerMessage-avatar,
+main .adminMessage-show .adminMessage .customer-profile .adminMessage-avatar {
+    width: 20%;
+}
+
+main .customerMessage-show .customerMessage .admin-profile .customerMessage-avatar img,
+main .adminMessage-show .adminMessage .customer-profile .adminMessage-avatar img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid #b19361;
+}
+
+main .customerMessage-show .customerMessage .adminMessage-content,
+main .adminMessage-show .adminMessage .customerMessage-content {
+    max-width: 80%;
+    background-color: #f2f2f2;
+    color: #b19361;
+    border-radius: 10px;
+}
+
+main .customerMessage-show .customerMessage .customerMessage-content,
+main .adminMessage-show .adminMessage .adminMessage-content {
+    max-width: 80%;
+    background-color: #b19361;
+    color: #fff;
+    margin-left: auto;
+    border-radius: 10px;
+}
+
+main .customerMessage-show .customerMessage .message-send .message,
+main .adminMessage-show .adminMessage .message-send .message {
+    width: 70%;
+    border: 1px solid #b19361;
+    color: #b19361;
+    outline: none;
+    border-radius: 10px;
+}
+
+main .customerMessage-show .customerMessage .message-send .submit,
+main .adminMessage-show .adminMessage .message-send .submit {
+    border: 1px solid #b19361;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #b19361;
+}
+
+main .customerMessage-show .customerMessage .message-send .submit:hover,
+main .adminMessage-show .adminMessage .message-send .submit:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+/* customer and admin notification */
+.customerNotification-show,
+.adminNotification-show {
+    display: none;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+
+main .customerNotification-show .customerNotification,
+main .adminNotification-show .adminNotification {
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: #b19361 0px 50px 100px -20px, #b19361 0px 30px 60px -30px, #b19361 0px -2px 6px 0px inset;
+}
+
+main .customerNotification-show .customerNotification .customerNotification-title,
+main .adminNotification-show .adminNotification .adminNotification-title {
+    background-color: #b19361;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+main .customerNotification-show .customerNotification .customerNotification-content,
+main .adminNotification-show .adminNotification .adminNotification-content {
+    background-color: gray;
+    color: #fff;
+    border-bottom: 1px solid #b19361;
+    border-radius: 10px;
+}
+
+/* product detail */
+main .product-detail .product-detail_image {
+    background-color: #f6f6f6;
+}
+
+main .product-detail .product-detail_image img {
+    width: 100%;
+    height: auto;
+}
+
+main .product-detail .product-detail_thumbnail div {
+    width: 20%;
+    border: 1px solid #b19361;
+    background-color: #f6f6f6;
+}
+
+main .product-detail .product-detail_thumbnail div:hover {
+    cursor: pointer;
+}
+
+main .product-detail .product-detail_thumbnail div img {
+    width: 100%;
+}
+
+main .product-detail .product-price .product-cost h5 del {
+    color: gray;
+}
+
+main .product-detail .product-price .product-price h3 {
+    color: #ee4d2d;
+}
+
+main .product-detail .product-discount_percent h6 {
+    color: #fff;
+    background-color: #ee4d2d;
+    border-radius: 10px;
+}
+
+main .product-detail .product-variation button {
+    color: #b19361;
+    background: none;
+    border: 1px solid #b19361;
+    border-radius: 10px;
+}
+
+main .product-detail .product-variation button:hover {
+    color: #fff;
+    background: #b19361;
+}
+
+main .product-detail .product-variation input {
+    border: 1px solid #b19361;
+    outline: none;
+}
+
+main .product-detail .product-variation .product-quantity span.minus-variation,
+main .product-detail .product-variation .product-quantity span.plus-variation {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #b19361;
+    background: none;
+    color: #b19361;
+    font-weight: bold;
+}
+
+main .product-detail .product-variation .product-quantity span.minus-variation:hover,
+main .product-detail .product-variation .product-quantity span.plus-variation:hover {
+    background: #b19361;
+    cursor: pointer;
+    color: #fff;
+}
+
+main .product-detail button.add-to_cart {
+    background-color: #b19361;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #b19361;
+}
+
+main .product-detail button.add-to_cart:hover {
+    background: none;
+    color: #b19361;
+}
+
+main .product-detail .product-detail_tablist .description-tablist button,
+main .product-detail .product-detail_tablist .reviews-tablist button {
+    border: 1px solid #b19361;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #b19361;
+}
+
+main .product-detail .product-detail_tablist .description-tablist button:hover,
+main .product-detail .product-detail_tablist .reviews-tablist button:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+main .product-detail .reviews-content .user-information .user-avatar {
+    width: 150px;
+    height: 150px;
+}
+
+main .product-detail .reviews-content .user-information .user-avatar img {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+    border: 1px solid #b19361;
+    border-radius: 50%;
+}
+
+main .product-detail .description-content {
+    display: none;
+}
+
+main .product-detail .reviews-content {
+    display: none;
+}
+
+main .product-detail .reviews-content .review {
+    padding-left: 75px;
+}
+
+main .product-detail .reviews-content .a-content{
+    border: 1px solid #b19361;
+}
+
+
+/* checkout */
+
+main .checkout .billing-details .billing-details_title,
+main .checkout .your-order .your-order_title {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    border-bottom: 3px solid #b19361;
+}
+
+main .checkout input,
+main .checkout select,
+main .checkout textarea {
+    border: 1px solid #b19361;
+    border-radius: 10px;
+    outline: none;
+    color: #b19361;
+}
+
+main .checkout select option {
+    color: #b19361;
+}
+
+main .checkout .your-order .product-total .product .product-title,
+main .checkout .your-order .product-total .total .total-title {
+    background-color: #f2f2f2;
+}
+
+main .checkout .your-order .product-total .product {
+    width: 70%;
+}
+
+main .checkout .your-order .product-total .total {
+    width: 30%;
+}
+
+main .checkout .your-order .product-total .product .product-size_quantity,
+main .checkout .your-order .product-total .product .cart-subtotal,
+main .checkout .your-order .product-total .product .offer,
+main .checkout .your-order .product-total .product .shipping,
+main .checkout .your-order .product-total .product .order-total {
+    border-bottom: 1px solid #b19361;
+    border-left: 1px solid #b19361;
+    border-radius: 0 0 0 10px;
+}
+
+main .checkout .your-order .product-total .total .product-price,
+main .checkout .your-order .product-total .total .cart-subtotal_price,
+main .checkout .your-order .product-total .total .offer-price,
+main .checkout .your-order .product-total .total .shipping-price,
+main .checkout .your-order .product-total .total .order-total_price {
+    border-bottom: 1px solid #b19361;
+    border-right: 1px solid #b19361;
+    border-radius: 0 0 10px 0;
+}
+
+main .checkout .submit-payment input {
+    background-color: #b19361;
+    color: #fff;
+}
+
+main .checkout .submit-payment input:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+main .checkout .your-order .product-total .product .order-total,
+main .checkout .your-order .product-total .total .order-total_price {
+    background-color: #b19361;
+    color: #fff;
+}
+
+main .checkout .your-order .product-total .product .order-total {
+    border-radius: 10px 0 0 10px;
+}
+
+main .checkout .your-order .product-total .total .order-total_price {
+    border-radius: 0 10px 10px 0;
+}
+
+/* orders */
+main .orders .orders-tablist .all-orders button,
+main .orders .orders-tablist .being-processed button,
+main .orders .orders-tablist .shipping-orders button,
+main .orders .orders-tablist .deliveried-orders button,
+main .orders .orders-tablist .canceled-orders button {
+    border: 1px solid #b19361;
+    border-radius: 10px;
+    background-color: #b19361;
+    color: #fff;
+}
+
+
+main .orders .orders-tablist .all-orders button:hover,
+main .orders .orders-tablist .being-processed button:hover,
+main .orders .orders-tablist .shipping-orders button:hover,
+main .orders .orders-tablist .deliveried-orders button:hover,
+main .orders .orders-tablist .canceled-orders button:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+main .orders .all-orders-content table .view-order_detail button,
+main .orders .processing-orders-content table .view-order_detail button,
+main .orders .shipping-orders-content table .view-order_detail button,
+main .orders .deliveried-orders-content table .view-order_detail button,
+main .orders .canceled-orders-content table .view-order_detail button {
+    border: 1px solid #b19361;
+    background-color: #b19361;
+    color: #fff;
+}
+
+main .orders .all-orders-content table .view-order_detail button:hover,
+main .orders .processing-orders-content table .view-order_detail button:hover,
+main .orders .shipping-orders-content table .view-order_detail button:hover,
+main .orders .deliveried-orders-content table .view-order_detail button:hover,
+main .orders .canceled-orders-content table .view-order_detail button:hover {
+    background: none;
+    color: #b19361;
+}
+
+main .orders .orders-content .all-orders-content .order,
+main .orders .orders-content .shipping-orders-content .order,
+main .orders .orders-content .deliveried-orders-content .order,
+main .orders .orders-content .canceled-orders-content .order {
+    border: 3px solid #b19361;
+}
+
+main .orders .orders-content .all-orders-content .product-image img,
+main .orders .orders-content .shipping-orders-content .product-image img,
+main .orders .orders-content .deliveried-orders-content .product-image img,
+main .orders .orders-content .canceled-orders-content .product-image img {
+    width: 100px;
+    height: auto;
+}
+
+main .orders .orders-content .order .order-detail_status .order-detail button,
+main .orders .orders-content .order .order-detail_status .feedback-order button,
+main .orders .orders-content .order .order-detail_status .cancel-order button {
+    border: 1px solid #b19361;
+    background-color: #b19361;
+    color: #fff;
+    border-radius: 10px;
+}
+
+main .orders .orders-content .order .order-detail_status .order-detail button:hover,
+main .orders .orders-content .order .order-detail_status .feedback-order button:hover,
+main .orders .orders-content .order .order-detail_status .cancel-order button:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+main .orders .orders-content .all-orders-content {
+    display: block;
+}
+
+main .orders .orders-content .shipping-orders-content,
+main .orders .orders-content .deliveried-orders-content,
+main .orders .orders-content .processing-orders-content,
+main .orders .orders-content .canceled-orders-content {
+    display: none;
+}
+
+
+/* cart */
+
+main .cart .cart-table {
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    border: 1;
+}
+
+main .cart .cart-table tbody {
+    border: 1px solid #b19361;
+    border-top: none;
+}
+
+main .cart .cart-table table th div {
+    border: none;
+    border-bottom: 3px solid #b19361;
+    background-color: #f2f2f2;
+}
+
+main .cart .cart-table table th.chooce-product {
+    border: none;
+    background: none;
+}
+
+main .cart .cart-table table th.cart-manage div {
+    border-bottom: 3px solid #b19361;
+    border-radius: 0 10px 10px 0;
+    background-color: #f2f2f2;
+}
+
+main .cart .cart-table table th.chooce-product div {
+    border-bottom: 3px solid #b19361;
+    border-radius: 10px 0 0 10px;
+    background-color: #f2f2f2;
+}
+
+main .cart .cart-table table td {
+    min-width: 150px;
+}
+
+main .cart .cart-table .cart-image {
+    max-width: 180px;
+}
+
+main .cart .cart-table .cart-image img {
+    width: 80%;
+}
+
+main .cart .cart-table .cart-quantity input {
+    width: 80%;
+}
+
+main .cart .cart-total_coupon .cart-coupon .cart-coupon_title,
+main .cart .cart-total_coupon .cart-total .cart-total_title {
+    background-color: #f2f2f2;
+    color: #b19361;
+    border-radius: 10px;
+    border-bottom: 3px solid #b19361;
+}
+
+main .cart .cart-total_coupon .cart-coupon .cart-coupon_content {
+    border: 1px solid #b19361;
+    border-top: none;
+}
+
+main .cart .cart-total_coupon .cart-coupon .cart-coupon_content .coupon-code {
+    border: 1px solid #b19361;
+    outline: none;
+    color: #b19361;
+    border-radius: 10px;
+    width: 70%;
+}
+
+main .cart .cart-total_coupon .cart-coupon .cart-coupon_content .coupon-apply {
+    border: 1px solid #b19361;
+    background-color: #b19361;
+    color: #fff;
+    border-radius: 10px;
+}
+
+main .cart .cart-total_coupon .cart-coupon .cart-coupon_content .coupon-apply:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+main .cart .cart-total_coupon .cart-total .cart-total_content {
+    border: 1px solid #b19361;
+    border-top: none;
+}
+
+main .cart .cart-total_coupon .cart-total .cart-total_subtotal .price,
+main .cart .cart-total_coupon .cart-total .cart-total_total .price,
+main .cart .cart-total_coupon .cart-total .cart-total_offer .price,
+main .cart .cart-total_coupon .cart-total .cart-total_shipping .price {
+    width: 30%;
+}
+
+main .cart .cart-table .all-cart_manage {
+    border-top: 1px solid #b19361;
+}
+
+main .cart .cart-total .cart-total_content .checkout input {
+    border: 1px solid #b19361;
+    color: #fff;
+    background-color: #b19361;
+}
+
+main .cart .cart-total .cart-total_content .checkout input:hover {
+    background-color: #fff;
+    color: #b19361;
+}
+
+main .cart .plus-variation,
+main .cart .minus-variation {
+    border: 1px solid #b19361;
+    background-color: #b19361;
+    color: #fff;
+}
+
+main .cart #chooce-variation_quantity_from_cart {
+    width: 50%;
+    border: 1px solid #b19361;
+    border-radius: 5px;
+    outline: none;
+    color: #b19361;
+}
+
+main .cart .plus-variation:hover,
+main .cart .minus-variation:hover {
+    background: none;
+    color: #b19361;
+}
+
+main .cart .deleteOne-from_cart,
+main .cart .deleteAll-from_cart {
+    border: none;
+    background: none;
+}
+
+main .cart .deleteOne-from_cart:hover,
+main .cart .deleteAll-from_cart:hover {
+    color: #b19361;
+}
+
+/* order detail */
+main .orderDetail .order-address .order-address_content,
+main .orderDetail .payment-method .payment-method_content,
+main .orderDetail .infor-product .infor-product_content {
+    border: 3px solid #b19361;
+    border-radius: 0 0 10px 10px;
+    border-top: none;
+}
+
+main .orderDetail .order-address .order-address_title,
+main .orderDetail .payment-method .payment-method_title,
+main .orderDetail .infor-product .infor-product_title {
+    background-color: #f2f2f2;
+    color: #b19361;
+    border-radius: 10px;
+    border-bottom: 3px solid #b19361;
+    border-top: none;
+}
+
+main .orderDetail .infor-product .infor-product_content .product-image img {
+    width: 100%;
+    height: auto;
+}
+
+main .orderDetail .infor-product_content .total {
+    background-color: #b19361;
+    color: #fff;
+    border-radius: 10px;
+}
+
+main .orderDetail .infor-product_content .cancel-contact button {
+    border-radius: 10px;
+    border: 1px solid #b19361;
+    background-color: #b19361;
+    color: #fff;
+}
+
+main .orderDetail .infor-product_content .cancel-contact button:hover {
+    color: #b19361;
+    background: none;
+}
+
+main .orderDetail .infor-product_content .feedback button {
+    border: 1px solid #b19361;
+    background-color: #b19361;
+    color: #fff;
+    border-radius: 10px;
+}
+
+main .orderDetail .infor-product_content .feedback-content textarea {
+    color: #b19361;
+    outline: none;
+    border-radius: 10px;
+}
+
+main .orderDetail .feedback-content button {
+    border: 1px solid #b19361;
+    background-color: #b19361;
+    border-radius: 10px;
+    color: #fff;
+}
+
+main .orderDetail .feedback-content button:hover {
+    background: none;
+    color: #b19361;
+}
+
+/* about us */
+main .about-us_content .about-us_image img {
+    width: 100%;
+    height: auto;
+}
+
+main .about-us_content p.text,
+main .progressbar-section p.text {
+    color: #777;
+}
+
+main .progressbar-section {
+    background-color: #f6f6f6;
+}
+
+main .progress {
+    height: 7px;
+    border-radius: 0;
+    border: 1px solid #b194616c;
+}
+
+main .progress-bar {
+    background-color: #b19361;
+    height: 7px;
+}
+
+main .contact-us_service p {
+    color: #777;
+}
+
+/* login */
+.login {
+    border: 1px solid #b19361;
+}
+
+.login .login-title {
+    background-color: #b19361;
+    color: #fff;
+}
+
+.login .label-input_email,
+.login .label-input_password {
+    background-color: #b19361;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px 0 0 10px;
+}
+
+.login .label-input_email i,
+.login .label-input_password i {
+    color: #fff;
+}
+
+.login .input-input_email,
+.login .input-input_password {
+    height: 40px;
+    border: 1px solid #b19361;
+    outline: none;
+    border-radius: 0 10px 10px 0;
+    color: #b19361;
+    width: 300px;
+}
+
+.login .forgot-password {
+    color: #b19361;
+    text-decoration: none;
+}
+
+.login .login-input_submit {
+    height: 40px;
+    background-color: #b19361;
+    color: #fff;
+    border: 1px solid #b19361;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.login .login-input_submit:hover {
+    background: none;
+    color: #b19361;
+}
+
+.login .signup-now {
+    color: #b19361;
+    text-decoration: none;
+}
+
+
+/* register */
+
+.register {
+    border: 1px solid #b19361;
+}
+
+.register .register-title {
+    background-color: #b19361;
+    color: #fff;
+}
+
+.register .input-input_firstname,
+.register .input-input_lastname,
+.register .input-input_phonenumber,
+.register .input-input_email,
+.register .input-input_password,
+.register .input-input_confirmpassword {
+    height: 40px;
+    border: 1px solid #b19361;
+    outline: none;
+    border-radius: 10px;
+    color: #b19361;
+    width: 300px;
+}
+
+.register .register-input_submit {
+    height: 40px;
+    background-color: #b19361;
+    color: #fff;
+    border: 1px solid #b19361;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.register .register-input_submit:hover {
+    background: none;
+    color: #b19361;
+}
+
+.register .login-now {
+    color: #b19361;
+    text-decoration: none;
+}
+
+.register .check-true_password,
+.register .check-true_email,
+.register .check-true_confirmpassword,
+.register .check-true_phonenumber {
+    color: #009d63;
+    display: none;
+}
+
+
+.register .check-false_password,
+.register .check-false_email,
+.register .check-false_confirmpassword,
+.register .check-false_phonenumber {
+    color: red;
+    display: none;
+}

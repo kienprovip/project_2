@@ -1,0 +1,6 @@
+@media screen and (max-width: 991px) {
+    .update-product_show .update-product_detail {
+        width: 100%;
+        overflow-x: scroll;
+    }
+}
