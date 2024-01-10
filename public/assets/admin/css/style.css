@@ -527,3 +527,82 @@
     color: #009d63;
     text-decoration: none;
 }
+
+.update-product-button,
+.check-infor-product,
+.check-delete-product {
+    border: none;
+    background: none;
+}
+
+.check-infor-product:hover,
+.check-delete-product:hover {
+    color: #009d63;
+}
+
+.close-update_product {
+    color: #fff;
+    height: 100%;
+    border: 1px solid #009d63;
+}
+
+.input-product_name,
+.variation-quantity,
+.size-name,
+.color-name,
+.input-product_price,
+.input-product_discount {
+    border-radius: 10px;
+}
+
+.input-product_price,
+.input-product_discount,
+.input-product_name {
+    width: 90%;
+}
+
+.button-add_variation,
+.product_description {
+    font-size: larger;
+}
+
+.input-product_name,
+.input-product_discount,
+.input-product_price,
+.variation-quantity,
+.size-name,
+.color-name {
+    border-radius: 10px;
+}
+
+.input-product_name,
+.input-product_discount,
+.input-product_price {
+    width: 100%;
+}
+
+.add_variation,
+.product_description {
+    font-size: larger;
+}
+
+.button-add_variation:hover {
+    color: #009d63;
+    cursor: pointer;
+}
+
+.button-update {
+    background-color: #009d63;
+    border: 1px solid #009d63;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.button-update:hover {
+    background: none;
+    color: #009d63;
+}
+
+.close-update_product {
+    color: #fff;
+}

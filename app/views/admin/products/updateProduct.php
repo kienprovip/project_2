@@ -1,10 +1,12 @@
 <div class="update-product_show w-100 top-0 bottom-0 end-0 star-0 text-center d-block">
     <div>
-        <div class="title">
-            <a href="/project_2/Admin/products">
-                <h5 class="top-0 bottom-0 end-0 close-update_product"><i class="fa fa-times" aria-hidden="true"></i></h5>
-            </a>
-            <h5 class="py-5">Update product</h5>
+        <div class="title position-relative">
+            <h5 class="py-3">Update product</h5>
+            <span class="position-absolute end-0 bottom-0 top-0 d-flex align-items-center h-100">
+                <a href="/project_2/Admin/products" class="d-flex align-items-center h-100 text-decoration-none">
+                    <h5 class="top-0 bottom-0 end-0 close-update_product m-0 d-flex align-items-center justify-content-center"><i class="fa fa-times" aria-hidden="true"></i></h5>
+                </a>
+            </span>
         </div>
         <div class="update-product_form">
             <form action="/project_2/Admin/UpdateProduct" method="POST">
@@ -110,7 +112,7 @@
                         }
             ?>
             <div class="pb-5">
-                <input class="button-update" type="submit" value="Update">
+                <input class="button-update px-5 py-1" type="submit" value="Update">
             </div>
             </form>
         </div>
@@ -158,49 +160,3 @@
         });
     });
 </script>
-<style>
-    .input-product_name,
-    .input-product_discount,
-    .input-product_price,
-    .variation-quantity,
-    .size-name,
-    .color-name {
-        border-radius: 10px;
-    }
-
-    .input-product_name,
-    .input-product_discount,
-    .input-product_price {
-        width: 100%;
-    }
-
-    .add_variation,
-    .product_description {
-        font-size: larger;
-    }
-
-    .button-add_variation:hover {
-        color: #009d63;
-        cursor: pointer;
-    }
-
-    .button-update {
-        background-color: #009d63;
-        height: 40px;
-        width: 100px;
-        border-radius: 10px;
-    }
-
-    .button-update:hover {
-        background-color: white;
-    }
-
-    .close-update_product {
-        color: black;
-        float: right;
-    }
-
-    .close-update_product:hover {
-        color: red;
-    }
-</style>

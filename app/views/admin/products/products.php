@@ -41,7 +41,7 @@
                                             <span class="me-2 click-delete_product">
                                                 <form action="/project_2/admin/deleteProduct" method="POST">
                                                     <input type="text" name="product_idD" value="<?php echo $item['product_id'] ?>" hidden>
-                                                    <button><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                                    <button class="check-delete-product"><i class="fa fa-minus" aria-hidden="true"></i></button>
                                                 </form>
                                             </span>
                                             <form action="/project_2/Admin/updateproduct" method="POST">
@@ -124,14 +124,3 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<style>
-    .update-product-button,
-    .check-infor-product {
-        border: none;
-        background: none;
-    }
-
-    .check-infor-product:hover {
-        color: #009d63;
-    }
-</style>

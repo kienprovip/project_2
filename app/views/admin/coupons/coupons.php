@@ -19,7 +19,6 @@
                                 <th class="text-center" scope="col">Quantity</th>
                                 <th class="text-center" scope="col">Begining</th>
                                 <th class="text-center" scope="col">Finishing</th>
-                                <th class="text-center" scope="col">Operation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,7 +32,6 @@
                                     <td class="text-center"><?php echo $coupon['coupon_quantity'] ?></td>
                                     <td class="text-center"><?php echo $coupon['coupon_start']; ?></td>
                                     <td class="text-center"><?php echo $coupon['coupon_finish'] ?></td>
-                                    <td class="text-center"><span class="click-delete-coupon"><i class="fa fa-times" aria-hidden="true"></i></span></td>
                                 </tr>
                             <?php $count++;
                             } ?>
@@ -82,15 +80,6 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <div id="show-delete-coupon" class="py-3">
-            <form class="minus-coupon-form">
-                <p class="text-center">Are you sure?</p>
-                <div class="button-minus">
-                    <input class="yes px-3" type="button" value="Yes">
-                    <input class="no px-3 hide-delete-show" type="button" value="No">
-                </div>
-            </form>
         </div>
     </div>
 </div>

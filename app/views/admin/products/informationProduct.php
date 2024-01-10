@@ -97,30 +97,3 @@
         </div>
     </div>
 </div>
-<style>
-    .close-update_product {
-        color: #fff;
-        height: 100%;
-        border: 1px solid #009d63;
-    }
-
-    .input-product_name,
-    .variation-quantity,
-    .size-name,
-    .color-name,
-    .input-product_price,
-    .input-product_discount {
-        border-radius: 10px;
-    }
-
-    .input-product_price,
-    .input-product_discount,
-    .input-product_name {
-        width: 90%;
-    }
-
-    .button-add_variation,
-    .product_description {
-        font-size: larger;
-    }
-</style>
