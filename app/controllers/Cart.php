@@ -68,7 +68,7 @@ class Cart extends BaseController
 
     public function addToCart()
     {
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_SESSION['customer'][0])) {
+        if (isset($_SERVER['REQUEST_METHOD']) === 'POST' && isset($_SESSION['customer'][0])) {
             $this->model = $this->model('ProductModel');
             $dataVariationId = $this->model('ProductModel');
             $variationId = $dataVariationId->getVariationId($_POST['product_id'], $_POST['color'], $_POST['size']);
@@ -199,7 +199,7 @@ class Cart extends BaseController
         $this->model = $this->model('ProductModel');
         $dataProduct = $this->model('ProductModel');
         $dataVariation = $this->model('ProductModel');
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
             $cart_id = $_POST['cart_id'];
             $cart_quantity = $_POST['cart_quantity'];
             $variation_id = $_POST['variation_id'];
@@ -284,7 +284,7 @@ class Cart extends BaseController
 
     public function deleteOne()
     {
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
             $cart_id = $_POST['cart_id'];
             $dataCart = $this->model('CartModel');
             $this->model = $this->model('ProductModel');
@@ -329,7 +329,7 @@ class Cart extends BaseController
     }
     public function deleteAll()
     {
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
             $dataCart = $this->model('CartModel');
             $getCart = $dataCart->getCart();
             $dataToUpdate = [];
@@ -407,7 +407,7 @@ class Cart extends BaseController
 
     public function proceedToCheckout()
     {
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
             $countChooceCart = $_POST['count_chooce'];
             $cartId = [];
             for ($i = 1; $i <= $countChooceCart; $i++) {

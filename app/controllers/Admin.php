@@ -134,7 +134,7 @@ class Admin extends BaseController
     {
         $this->model = $this->model('ProductsModel');
         $dataProduct = $this->model('ProductsModel');
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $count = $_POST['count'];
             $id = $_POST['productID'];
             $countAddVariation = $_POST['countAddVariation'];
@@ -279,17 +279,22 @@ class Admin extends BaseController
     {
         $title = 'Delete product';
         $this->adminData['page_title'] = $title;
-        $this->adminData['content'] = 'admin/products/InformationProduct';
+        $this->adminData['content'] = 'admin/products/deleteProduct';
         $this->adminData['sub_content']['delete'] = $_POST['product_idD'];
         $this->render('admin/layouts/adminLayout', $this->adminData);
     }
 
     public function checkDeleteProduct()
     {
-        if ($_SERVER["REQUEST_METHOD"] = 'POST') {
+        if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $id = $_POST['product_idD'];
+            $this->model = $this->model("ProductsModel");
+            $DeleteProduct = $this->model->DeleteProduct($id);
+            if ($DeleteProduct) {
+                header('Location: /project_2/admin/products');
+                exit();
+            }
         }
-        $DeleteProduct = $this->model->DeleteProduct($id);
     }
     public function productdetail()
     {
@@ -310,7 +315,7 @@ class Admin extends BaseController
     public function addProduct()
     {
         $this->model = $this->model('ProductsModel');
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // Xử lý dữ liệu từ form đăng ký, ví dụ: $_POST
             $countProduct = 0;
 

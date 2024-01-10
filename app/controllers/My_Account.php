@@ -69,7 +69,7 @@ class My_Account extends BaseController
     public function loginCheck()
     {
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $password = md5($_POST['password']);
             $userData = [
                 'email' => $_POST['email'],
@@ -98,7 +98,7 @@ class My_Account extends BaseController
 
     public function logout()
     {
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
             unset($_SESSION['customer']);
             header('Location: /project_2/');
         }

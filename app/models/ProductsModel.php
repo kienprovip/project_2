@@ -115,8 +115,11 @@ class ProductsModel extends Model
     public function DeleteProduct($id)
     {
         $this->table = 'products';
+        $data = [
+            'product_status' => 0
+        ];
         $condition = 'product_id=' . $id;
-        $DeleteP = $this->db->update($this->table, $condition);
+        $DeleteP = $this->db->update($this->table, $data, $condition);
         if (!$DeleteP) {
             return false;
         }

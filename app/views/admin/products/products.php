@@ -39,7 +39,7 @@
                                     <td>
                                         <div class="text-center justify-content-center d-flex">
                                             <span class="me-2 click-delete_product">
-                                                <form action="">
+                                                <form action="/project_2/admin/deleteProduct" method="POST">
                                                     <input type="text" name="product_idD" value="<?php echo $item['product_id'] ?>" hidden>
                                                     <button><i class="fa fa-minus" aria-hidden="true"></i></button>
                                                 </form>
@@ -75,15 +75,6 @@
             </div>
         </div>
     </div>
-    <?php
-    foreach ($data['product_list'] as $item) {
-    ?>
-        <div class="position-absolute delete-product_show w-100 top-0 bottom-0 end-0 start-0 justify-content-center align-items-center">
-
-        </div>
-    <?php
-    }
-    ?>
     <div class="position-absolute w-100 top-0 bottom-0 start-0 end-0 add-product_show">
         <div>
             <div class="title position-relative">

@@ -60,18 +60,6 @@ closeAddProductButton.addEventListener('click', function () {
 });
 
 
-
-var deleteProductButton = document.querySelector('.click-delete_product');
-var cancelDeleteButton = document.querySelector('.cancel-delete_button');
-var deleteProductShow = document.querySelector('.delete-product_show');
-deleteProductButton.addEventListener('click', function () {
-    deleteProductShow.style.display = 'flex';
-});
-
-cancelDeleteButton.addEventListener('click', function () {
-    deleteProductShow.style.display = 'none';
-});
-
 var dashboardClick = document.querySelector('.dashboard-click');
 var analyticsClick = document.querySelector('.analytics-click');
 var productsClick = document.querySelector('.products-click');

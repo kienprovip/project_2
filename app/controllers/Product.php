@@ -10,31 +10,24 @@ class Product extends BaseController
         $this->model = $this->model('ProductModel');
     }
 
-    public function a()
-    {
-        $data = $this->model('ProductModel');
-        $dataProduct = $data->getProductFilter($_POST['minimum-price'], $_POST['maximum-price'], $_POST['arrange'], $_POST['category']);
-        echo $dataProduct;
-    }
-
     public function index()
     {
         $data = $this->model('ProductModel');
         $categories = $data->getCategory();
         $dataProduct = null;
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST['search-product'])) {
+        if (isset($_SERVER['REQUEST_METHOD']) === 'POST' && isset($_POST['search-product'])) {
             if (isset($_POST['search-button'])) {
                 $dataProduct = $data->getProductSearch($_POST['search-product'], $_SESSION['pageStart'] = 0);
                 $dataProductList = $dataProduct;
             }
-        } elseif (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST['category_id'])) {
+        } elseif (isset($_SERVER['REQUEST_METHOD']) === 'POST' && isset($_POST['category_id'])) {
             $dataProduct = $data->getListProductsbyCategory($_POST['category_id']);
             $dataProductList = $dataProduct;
-        } elseif (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST['product-filter'])) {
+        } elseif (isset($_SERVER['REQUEST_METHOD']) === 'POST' && isset($_POST['product-filter'])) {
 
             $dataProduct = $data->getProductFilter($_POST['minimum-price'], $_POST['maximum-price'], $_POST['arrange'], $_POST['category']);
             $dataProductList = $dataProduct;
-        } elseif (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST['group_by'])) {
+        } elseif (isset($_SERVER['REQUEST_METHOD']) === 'POST' && isset($_POST['group_by'])) {
             $dataProduct = $data->getListProductgroupby($_POST['group_by']);
             $dataProductList = $dataProduct;
         } else {
@@ -45,7 +38,7 @@ class Product extends BaseController
         // xử lý phần chuyển trang là của mặc định hay là tìm kiếm, bộ lọc...
 
 
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST['submit-page_start'])) {
+        if (isset($_SERVER['REQUEST_METHOD']) === 'POST' && isset($_POST['submit-page_start'])) {
             $dataProduct = $data->getProductPage($_POST['pageStart']);
             $_SESSION['pageStart'] = $_POST['pageStart'];
         }
@@ -72,7 +65,7 @@ class Product extends BaseController
     public function product_detail()
     {
 
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
             $id = $_POST['product_id'];
             $data = $this->model('ProductModel');
             $this->model = $this->model('FeedbackModel');
