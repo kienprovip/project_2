@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-3 text-start mb-3 imageContainer">
                                 <p>Product image</p>
-                                <label for="imageInput">
+                                <label for="imageInput" class="update-product_image">
                                     <img id="previewImage" src="<?php echo "http://localhost/project_2/public/assets/clients/images/" . $item['product_image']; ?>" alt="" style="width: 100px; height:100px;">
                                 </label>
                                 <br>
@@ -29,21 +29,21 @@
                             </div>
                             <div class="col-3 mb-3 text-start imageContainer">
                                 <p>Product thumbnail 1</p>
-                                <label for="update-product_thumbnail1 imageInput">
+                                <label for="update-product_thumbnail1 imageInput" class="update-product_thumbnail1">
                                     <img id="previewImage" src="<?php echo "http://localhost/project_2/public/assets/clients/images/" . $item['product_thumbnail1']; ?>" alt="" style="width: 100px; height:100px;">
                                     <br>
                                     <input disabled id="update-product_thumbnail1 imageInput" name="productthumbnail1" type="file" accept="image/*" hidden>
                             </div>
                             <div class="col-3 mb-3 text-start imageContainer">
                                 <p>Product thumbnail 2</p>
-                                <label for="update-product_thumbnail2 imageInput">
+                                <label for="update-product_thumbnail2 imageInput" class="update-product_thumbnail2">
                                     <img id="previewImage" src="<?php echo "http://localhost/project_2/public/assets/clients/images/" . $item['product_thumbnail2']; ?>" alt="" style="width: 100px; height:100px;">
                                 </label><br>
                                 <input disabled id="update-product_thumbnail2 imageInput" name="productthumbnail2" type="file" accept="image/*" hidden>
                             </div>
                             <div class="col-3 mb-3 text-start imageContainer">
                                 <p>Product thumbnail 3</p>
-                                <label for="update-product_thumbnail3 imageInput">
+                                <label for="update-product_thumbnail3 imageInput" class="update-product_thumbnail3">
                                     <img id="previewImage" src="<?php echo "http://localhost/project_2/public/assets/clients/images/" . $item['product_thumbnail3']; ?>" alt="" style="width: 100px; height:100px;">
                                 </label><br>
                                 <input disabled id="update-product_thumbnail3 imageInput" name="productthumbnail3" type="file" accept="image/*" hidden>
@@ -59,7 +59,7 @@
                             <input disabled type="text" placeholder="Product price" name="productprice" class="p-2 input-product_price" value="<?php echo $item['product_cost']; ?>">
                         </div>
                         <div class="col-lg-4 mb-3 text-start">
-                            <p>Product quantity</p>
+                            <p>Product discount</p>
                             <input disabled type="text" placeholder="Product discount" name="productdiscount" class="p-2 input-product_discount" value="<?php echo $item['product_quantity']; ?>">
                         </div>
                         <p class="mb-0 text-start button-add_variation mb-4">Product variation</p>
@@ -69,16 +69,22 @@
                             $count++;
                         ?>
                             <div class="col-12 update-product_variation mb-3">
-                                <div class="d-flex justify-content-between variation-add_update mb-3">
-                                    <input disabled type="text" name="variation_id<?php echo $count ?>" hidden value="<?php echo $item1['variation_id'] ?>">
-                                    <div class="col-4">
-                                        <input disabled class="p-1 color-name" type="text" name="colorname<?php echo $count ?>" placeholder="Color" value="<?php echo $item1['color_name'] ?>">
-                                    </div>
-                                    <div class="col-4">
-                                        <input disabled class="p-1 size-name" type="text" name="sizename<?php echo $count ?>" placeholder="Size" value="<?php echo $item1['size_name'] ?>">
-                                    </div>
-                                    <div class="col-4">
-                                        <input disabled class="p-1 variation-quantity" type="number" name="variationquantity<?php echo $count ?>" min="1" placeholder="Quantity" value="<?php echo $item1['variation_quantity'] ?>">
+                                <div class="variation-add_update mb-3">
+                                    <div class="row">
+
+                                        <input disabled type="text" name="variation_id<?php echo $count ?>" hidden value="<?php echo $item1['variation_id'] ?>">
+                                        <div class="col-lg-4">
+                                            <p class="text-start">Color name</p>
+                                            <input disabled class="p-1 color-name w-100" type="text" name="colorname<?php echo $count ?>" placeholder="Color" value="<?php echo $item1['color_name'] ?>">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <p class="text-start">Size name</p>
+                                            <input disabled class="p-1 size-name w-100" type="text" name="sizename<?php echo $count ?>" placeholder="Size" value="<?php echo $item1['size_name'] ?>">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <p class="text-start">Quantity</p>
+                                            <input disabled class="p-1 variation-quantity w-100" type="number" name="variationquantity<?php echo $count ?>" min="1" placeholder="Quantity" value="<?php echo $item1['variation_quantity'] ?>">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

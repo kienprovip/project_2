@@ -105,78 +105,78 @@
                     foreach ($data['all_product'] as $prd) {
                         $countProduct++;
                     }
-                    foreach ($data['product_list'] as $item) {
+                    if (!empty($data['product_list'])) {
+                        foreach ($data['product_list'] as $item) {
 
                     ?>
-                        <div class=" col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-                            <form action="/project_2/product/product_detail" method="POST">
-                                <div class="card product position-relative">
-                                    <div class="position-absolute d-flex justify-content-between top-0 start-0 end-0">
-                                        <div class="discount px-1">
-                                            <i class='bx bx-trending-down'></i><?php echo $item['product_discount_percent'] . '%' ?>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center product_image">
-                                        <img class="card-img-top" src="http://localhost/project_2/public/assets/clients/images/<?php echo $item['product_image']; ?>" alt="Card image">
-                                    </div>
-                                    <div class="card-body position-relative">
-                                        <div class="card-content">
-                                            <input type="text" value="<?php $item['product_id']; ?>" hidden name="product_id">
-                                            <p class="card-title text-center fw-bold"><?php echo $item['product_name']; ?></p>
-                                            <p class="card-text text-center fw-bold"><?php echo $item['product_current_price'] . '$'; ?></p>
-                                        </div>
-                                        <div class="buy-detail d-none justify-content-center position-absolute top-0 bottom-0 start-0 end-0">
-                                            <div class="detail ms-2 d-flex align-items-center">
-                                                <input type="text" hidden value="<?php echo $item['product_id']; ?>" name="product_id">
-                                                <button class="p-2"><i class='bx bx-cart-add d-flex justify-content-center align-items-center'></i></button>
-                                            </div>
-                                            <div class="detail ms-2 d-flex align-items-center">
-                                                <input type="text" hidden value="<?php echo $item['product_id']; ?>" name="product_id">
-                                                <button class="p-2"><i class='bx bx-menu d-flex justify-content-center align-items-center'></i></button>
+                            <div class=" col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                                <form action="/project_2/product/product_detail" method="POST">
+                                    <div class="card product position-relative">
+                                        <div class="position-absolute d-flex justify-content-between top-0 start-0 end-0">
+                                            <div class="discount px-1">
+                                                <i class='bx bx-trending-down'></i><?php echo $item['product_discount_percent'] . '%' ?>
                                             </div>
                                         </div>
+                                        <div class="d-flex justify-content-center align-items-center product_image">
+                                            <img class="card-img-top" src="http://localhost/project_2/public/assets/clients/images/<?php echo $item['product_image']; ?>" alt="Card image">
+                                        </div>
+                                        <div class="card-body position-relative">
+                                            <div class="card-content">
+                                                <input type="text" value="<?php $item['product_id']; ?>" hidden name="product_id">
+                                                <p class="card-title text-center fw-bold"><?php echo $item['product_name']; ?></p>
+                                                <p class="card-text text-center fw-bold"><?php echo $item['product_current_price'] . '$'; ?></p>
+                                            </div>
+                                            <div class="buy-detail d-none justify-content-center position-absolute top-0 bottom-0 start-0 end-0">
+                                                <div class="detail ms-2 d-flex align-items-center">
+                                                    <input type="text" hidden value="<?php echo $item['product_id']; ?>" name="product_id">
+                                                    <button class="p-2"><i class='bx bx-menu d-flex justify-content-center align-items-center'></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="position-absolute bottom-0 end-0 mb-0 text-center pe-1 pb-1" style="font-size: 10px;">Sold: <?php echo $item['product_sold']; ?></p>
                                     </div>
-                                    <p class="position-absolute bottom-0 end-0 mb-0 text-center pe-1 pb-1" style="font-size: 10px;">Sold: <?php echo $item['product_sold']; ?></p>
-                                </div>
-                            </form>
-                        </div>
-                    <?php } ?>
-                    <div class="text-center pageNumber d-flex justify-content-center">
-                        <?php
-                        $pageStart = floor($countProduct / 12);
-                        if ($countProduct % 12 != 0) {
-                            $pageStart++;
-                        }
-                        ?>
-                        <?php
-                        if ($pageStart > 1) { ?>
-                            <form action="/project_2/product/index" method="POST">
-                                <?php if ($_SESSION['pageStart'] == 0) { ?>
-                                    <button class="px-1 me-2" disabled> <i class='bx bx-caret-left'></i> </button>
-                                <?php } else { ?>
-                                    <input type="text" name="pageStart" value="<?php echo $_SESSION['pageStart'] - 12 ?>" hidden>
-                                    <button class="px-1 me-2"> <i class='bx bx-caret-left'></i> </button>
-                                <?php } ?>
-                            </form>
-                            <div class="d-flex justify-content-center">
-                                <?php for ($i = 1; $i <= $pageStart; $i++) { ?>
-                                    <form action="/project_2/product/index" method="POST">
-                                        <input type="text" name="pageStart" value="<?php echo ($i - 1) * 12 ?>" hidden>
-                                        <button class="px-2 me-2" name="submit-page_start"><?php echo $i; ?></button>
-                                    </form>
-                                <?php } ?>
+                                </form>
                             </div>
-
-                            <form action="/project_2/product/index" method="POST">
-                                <?php if ($_SESSION['pageStart'] + 12 > $countProduct) { ?>
-                                    <button class="px-1" name="submit-page_start" disabled><i class='bx bx-caret-right'></i></button>
-                                <?php } else { ?>
-                                    <input type="text" name="pageStart" value="<?php echo $_SESSION['pageStart'] + 12 ?>" hidden>
-                                    <button class="px-1" name="submit-page_start"><i class='bx bx-caret-right'></i></button>
-                                <?php } ?>
-                            </form>
                         <?php } ?>
-                    </div>
+                        <div class="text-center pageNumber d-flex justify-content-center">
+                            <?php
+                            $pageStart = floor($countProduct / 12);
+                            if ($countProduct % 12 != 0) {
+                                $pageStart++;
+                            }
+                            ?>
+                            <?php
+                            if ($pageStart > 1) { ?>
+                                <form action="/project_2/product/index" method="POST">
+                                    <?php if ($_SESSION['pageStart'] == 0) { ?>
+                                        <button class="px-1 me-2" disabled> <i class='bx bx-caret-left'></i> </button>
+                                    <?php } else { ?>
+                                        <input type="text" name="pageStart" value="<?php echo $_SESSION['pageStart'] - 12 ?>" hidden>
+                                        <button class="px-1 me-2"> <i class='bx bx-caret-left'></i> </button>
+                                    <?php } ?>
+                                </form>
+                                <div class="d-flex justify-content-center">
+                                    <?php for ($i = 1; $i <= $pageStart; $i++) { ?>
+                                        <form action="/project_2/product/index" method="POST">
+                                            <input type="text" name="pageStart" value="<?php echo ($i - 1) * 12 ?>" hidden>
+                                            <button class="px-2 me-2" name="submit-page_start"><?php echo $i; ?></button>
+                                        </form>
+                                    <?php } ?>
+                                </div>
+
+                                <form action="/project_2/product/index" method="POST">
+                                    <?php if ($_SESSION['pageStart'] + 12 > $countProduct) { ?>
+                                        <button class="px-1" name="submit-page_start" disabled><i class='bx bx-caret-right'></i></button>
+                                    <?php } else { ?>
+                                        <input type="text" name="pageStart" value="<?php echo $_SESSION['pageStart'] + 12 ?>" hidden>
+                                        <button class="px-1" name="submit-page_start"><i class='bx bx-caret-right'></i></button>
+                                    <?php } ?>
+                                </form>
+                        <?php }
+                        } else {
+                            echo "<h3 class='text-center'>Product not found!!!</h3>";
+                        } ?>
+                        </div>
                 </div>
             </div>
         </div>

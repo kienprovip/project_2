@@ -117,9 +117,9 @@
                                 <p class="mb-0">Product variation <span class="button-add_variation ms-1"><i class="fa fa-plus" aria-hidden="true"></i></span></p>
                                 <div class="variations-container mb-3">
                                     <div class="d-flex justify-content-between variation-add mb-3">
-                                        <input type="text" name="colorname1" placeholder="Color" class="p-1" required>
-                                        <input type="text" name="sizename1" placeholder="Size" class="p-1" required>
-                                        <input type="number" min="1" name="variationquantity1" placeholder="Quantity" class="p-1" required>
+                                        <input type="text" name="colorname1" placeholder="Color" class="p-1">
+                                        <input type="text" name="sizename1" placeholder="Size" class="p-1">
+                                        <input type="number" min="1" name="variationquantity1" placeholder="Quantity" class="p-1">
                                     </div>
                                 </div>
                             </div>

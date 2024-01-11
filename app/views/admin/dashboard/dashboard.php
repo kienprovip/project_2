@@ -126,7 +126,7 @@
                                         <td><?php echo $order['order_date'] ?></td>
                                         <td><?php echo $order['customer_name'] ?></td>
                                         <td>$<?php echo $order['order_price'] ?></td>
-                                        <td><button type="submit">View</button></td>
+                                        <td><button type="submit" class="view-order_detail_for-admin">View</button></td>
                                     </form>
                                 </tr>
                             <?php

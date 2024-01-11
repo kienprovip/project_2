@@ -27,25 +27,24 @@
                 </div>
                 <div class="col-lg-7">
                     <h3 class="product-name"><?php echo $item['product_name'] ?></h3>
-                    <div class="product_date me-3">Product date: <?php echo $item['product_date']; ?></div>
+                    <div class="product_date me-3">Product date: <span class="fw-bold"><?php echo $item['product_date']; ?></span></div>
                     <div class=" stars-reviews_solds d-flex ">
-                        <div class="solds">Sold: <?php echo $item['product_sold']; ?></div>
-                        <div class="quantity ms-3">Quantity: <?php echo $item['product_quantity']; ?></div>
+                        <div class="solds">Sold: <span class="fw-bold"><?php echo $item['product_sold']; ?></span></div>
+                        <div class="quantity ms-3">Quantity: <span id="product_quantity_change" class="fw-bold"><?php echo $item['product_quantity']; ?></span></div>
                     </div>
                     <div class="product-price d-flex mt-3">
-                        <div class="product-cost me-5">
+                        <div class="product-cost">
                             <h5><del><?php if ($item['product_discount_price'] !== '0') {
                                             echo $item['product_cost'] . '$';
                                         } ?></del></h5>
                         </div>
-                        <div class="product-price me-5">
+                        <div class="product-price">
                             <h3><?php echo $item['product_current_price'] . '$'; ?></h3>
                         </div>
                         <div class="product-discount_percent">
                             <h6 class="px-2"><?php if ($item['product_discount_percent'] !== '0') {
                                                     echo $item['product_discount_percent'] . '% Off';
                                                 } ?></h6>
-                            <!-- nếu tồn tại giá giảm giá thì ở đây sẽ dùng if để hiển thị giá thành ban đầu và giá sau khi đã giảm giá -->
                         </div>
                     </div>
                     <form action="/project_2/Cart/addToCart" method="POST">
@@ -160,10 +159,10 @@
                 for (var i = 0; i < variationsList.length; i++) {
                     if (variationsList[i]['color_name'] == selectedColor && variationsList[i]['size_name'] == selectedSize) {
                         variationQuantity = variationsList[i]['variation_quantity'];
+                        document.getElementById("product_quantity_change").textContent = variationQuantity;
                         break; // Stop the loop once a match is found
                     }
                 }
-                console.log(variationQuantity);
             }
 
             function isOptionAvailable(selectedOption, value, optionType1, optionType2) {

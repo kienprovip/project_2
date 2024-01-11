@@ -606,3 +606,21 @@
 .close-update_product {
     color: #fff;
 }
+
+.view-order_detail_for-admin {
+    background-color: #009d63;
+    color: #fff;
+    border: 1px solid #009d63;
+}
+
+.view-order_detail_for-admin:hover {
+    background: none;
+    color: #009d63;
+}
+
+.update-product_image img,
+.update-product_thumbnail1 img,
+.update-product_thumbnail2 img,
+.update-product_thumbnail3 img {
+    border: 1px solid #009d63;
+}

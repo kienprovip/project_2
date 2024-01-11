@@ -322,12 +322,14 @@ class Admin extends BaseController
 
             $variationData = [];
             for ($i = 1; $i <= $_SESSION['variation_quantity']; $i++) {
-                $variationData[$i] = [
-                    'colorname' . $i => $_POST['colorname' . $i],
-                    'sizename' . $i => $_POST['sizename' . $i],
-                    'variationquantity' . $i => $_POST['variationquantity' . $i],
-                ];
-                $countProduct += $_POST['variationquantity' . $i];
+                if (!empty($_POST['colorname' . $i]) && !empty($_POST['sizename' . $i]) && !empty($_POST['variationquantity' . $i])) {
+                    $variationData[$i] = [
+                        'colorname' . $i => $_POST['colorname' . $i],
+                        'sizename' . $i => $_POST['sizename' . $i],
+                        'variationquantity' . $i => $_POST['variationquantity' . $i],
+                    ];
+                    $countProduct += $_POST['variationquantity' . $i];
+                }
             }
             $currentTime = new DateTime('now', new DateTimeZone('UTC'));
             $newTimeZone = new DateTimeZone('Asia/Ho_Chi_Minh');

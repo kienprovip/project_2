@@ -176,10 +176,6 @@
                                 <div class="buy-detail d-none justify-content-center position-absolute top-0 bottom-0 start-0 end-0">
                                     <div class="detail ms-2 d-flex align-items-center">
                                         <input type="text" hidden value="<?php echo $item['product_id']; ?>" name="product_id">
-                                        <button class="p-2"><i class='bx bx-cart-add d-flex justify-content-center align-items-center'></i></button>
-                                    </div>
-                                    <div class="detail ms-2 d-flex align-items-center">
-                                        <input type="text" hidden value="<?php echo $item['product_id']; ?>" name="product_id">
                                         <button class="p-2"><i class='bx bx-menu d-flex justify-content-center align-items-center'></i></button>
                                     </div>
                                 </div>
@@ -224,10 +220,7 @@
                                     <p class="card-text text-center fw-bold"><?php echo $item['product_current_price'] . '$'; ?></p>
                                 </div>
                                 <div class="buy-detail d-none justify-content-center position-absolute top-0 bottom-0 start-0 end-0">
-                                    <div class="detail ms-2 d-flex align-items-center">
-                                        <input type="text" hidden value="<?php echo $item['product_id']; ?>" name="product_id">
-                                        <button class="p-2"><i class='bx bx-cart-add d-flex justify-content-center align-items-center'></i></button>
-                                    </div>
+
                                     <div class="detail ms-2 d-flex align-items-center">
                                         <input type="text" hidden value="<?php echo $item['product_id']; ?>" name="product_id">
                                         <button class="p-2"><i class='bx bx-menu d-flex justify-content-center align-items-center'></i></button>
