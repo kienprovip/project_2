@@ -36,7 +36,7 @@ class Orders extends BaseController
     public function orderDetail()
     {
         $data = $this->model('OrdersModel');
-        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
             $id = $_POST['order_id'];
             $dataOrders = $data->getOrderForOrderdetail($id);
             $dataOrderDetail = $data->getOrderDetail($id);
@@ -175,7 +175,7 @@ class Orders extends BaseController
     // khi hủy đơn hàng thì trả số lượng sản phẩm đã đặt hàng về như cũ, đặt trạng thái của đơn hàng về 0 để ẩn đi
     public function deleteOrder()
     {
-        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
             $order_id = $_POST['order_id'];
             $dataDeleteOrder = [
                 'orderstatus' => 0
@@ -222,7 +222,7 @@ class Orders extends BaseController
     {
         $this->model = $this->model('OrdersModel');
         $dataOrder = $this->model('OrdersModel');
-        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
             $order_id = $_POST['order_id'];
             $currentTime = new DateTime('now', new DateTimeZone('UTC'));
             $newTimeZone = new DateTimeZone('Asia/Ho_Chi_Minh');

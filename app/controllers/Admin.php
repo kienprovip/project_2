@@ -30,7 +30,7 @@ class Admin extends BaseController
 
     public function loginCheck()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = $_POST['email'];
             $password = md5($_POST['password']);
             $this->model = $this->model('LoginAdminModel');
@@ -117,7 +117,7 @@ class Admin extends BaseController
     public function updateproduct()
     {
         // Kiểm tra xem có dữ liệu POST được gửi hay không
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Lấy giá trị product_id từ form
             $this->model = $this->model("ProductsModel");
             $data = $this->model('ProductsModel');
@@ -287,7 +287,7 @@ class Admin extends BaseController
 
     public function checkDeleteProduct()
     {
-        if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+        if ($_SERVER["REQUEST_METHOD"] == 'POST') {
             $id = $_POST['product_idD'];
             $this->model = $this->model("ProductsModel");
             $DeleteProduct = $this->model->DeleteProduct($id);
@@ -299,7 +299,7 @@ class Admin extends BaseController
     }
     public function productdetail()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Lấy giá trị product_id từ form
             $data = $this->model('ProductsModel');
             $title = 'Product detail';
@@ -447,7 +447,7 @@ class Admin extends BaseController
     {
         $this->model = $this->model('OrdersAdminModel');
         $dataOrder = $this->model('OrdersAdminModel');
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (isset($_POST['accept'])) {
                 $dataAcceptOrder = [
                     'orderstatus' => 2

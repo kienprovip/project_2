@@ -33,7 +33,7 @@ class Home extends BaseController
 
     public function searchByCategoryName()
     {
-        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
+        if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
             $category_id = $_POST['category_id'];
         }
     }

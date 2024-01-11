@@ -69,7 +69,7 @@ class My_Account extends BaseController
     public function loginCheck()
     {
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $password = md5($_POST['password']);
             $userData = [
                 'email' => $_POST['email'],
