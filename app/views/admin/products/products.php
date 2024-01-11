@@ -45,12 +45,12 @@
                                                 </form>
                                             </span>
                                             <form action="/project_2/Admin/updateproduct" method="POST">
-                                                <input type="hidden" name="productId" value="<?php echo $item['product_id'] ?>">
-                                                <button class="update-product-button" type="">
+                                                <input type="text" hidden name="productId" value="<?php echo $item['product_id'] ?>">
+                                                <button class="update-product-button">
                                                     <span class="ms-2 click-update_product"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></button>
                                             </form>
                                             <form action="/project_2/Admin/productdetail" method="POST">
-                                                <input type="hidden" name="productId" value="<?php echo $item['product_id'] ?>">
+                                                <input type="text" hidden name="productId" value="<?php echo $item['product_id'] ?>">
                                                 <button class="check-infor-product"><i class="fa fa-eye" aria-hidden="true"></i></button>
                                             </form>
                                         </div>
@@ -87,10 +87,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 mb-3">
-                                <input type="text" placeholder="Product name" name="productname" class="p-2 input-product_name">
+                                <input type="text" placeholder="Product name" name="productname" class="p-2 input-product_name" required>
                             </div>
                             <div class="col-lg-6 mb-3">
-                                <input type="text" placeholder="Product price" name="productprice" class="p-2 input-product_price">
+                                <input type="number" min="1" placeholder="Product price" name="productprice" class="p-2 input-product_price" required>
                             </div>
                             <div class="col-12 mb-3">
                                 <label for="add-product_categorry">Product category</label>
@@ -101,13 +101,25 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
+                            <div class="col-12 mb-3">
+                                <label for="add-product_image">Product image</label><br><input id="add-product_image" name="productimage" type="file" required>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="add-product_thumbnail1">Product thumbnail 1</label><br><input id="add-product_thumbnail1" name="productthumbnail1" type="file" required>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="add-product_thumbnail2">Product thumbnail 2</label><br><input id="add-product_thumbnail2" name="productthumbnail2" type="file" required>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="add-product_thumbnail3">Product thumbnail 3</label><br><input id="add-product_thumbnail3" name="productthumbnail3" type="file" required>
+                            </div>
                             <div class="col-12 add-product_variation mb-3">
                                 <p class="mb-0">Product variation <span class="button-add_variation ms-1"><i class="fa fa-plus" aria-hidden="true"></i></span></p>
                                 <div class="variations-container mb-3">
                                     <div class="d-flex justify-content-between variation-add mb-3">
                                         <input type="text" name="colorname1" placeholder="Color" class="p-1" required>
-                                        <input type="text" name="sizename1" placeholder="Size" class="p-1">
-                                        <input type="text" name="variationquantity1" placeholder="Quantity" class="p-1">
+                                        <input type="text" name="sizename1" placeholder="Size" class="p-1" required>
+                                        <input type="number" min="1" name="variationquantity1" placeholder="Quantity" class="p-1" required>
                                     </div>
                                 </div>
                             </div>
@@ -124,3 +136,45 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        let variationCount = 1; // Biến JavaScript
+
+
+
+        $(".button-add_variation").on("click", function() {
+            variationCount++;
+
+            let newVariation = $(".variations-container .variation-add:first").clone();
+
+            newVariation.find("input[name='colorname1']").attr("name", "colorname" + variationCount).val("");
+            newVariation.find("input[name='sizename1']").attr("name", "sizename" + variationCount).val("");
+            newVariation.find("input[name='variationquantity1']").attr("name", "variationquantity" + variationCount).val("");
+
+            $(".variations-container").append(newVariation);
+
+            // Sử dụng AJAX để gửi dữ liệu đến trang PHP
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            // Xử lý sự kiện khi trạng thái của request thay đổi
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Xử lý kết quả từ server (nếu cần)
+                    console.log(xhr.responseText);
+                }
+            };
+
+            // Gửi dữ liệu đến server
+            xhr.send("data=" + encodeURIComponent(variationCount));
+            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // Nhận giá trị từ JavaScript
+                $dataFromJavaScript = $_POST['data'];
+
+                // Gán giá trị vào biến session
+                $_SESSION['variation_quantity'] = $dataFromJavaScript;
+            } ?>
+        });
+    });
+</script>

@@ -119,6 +119,7 @@ class Admin extends BaseController
         // Kiểm tra xem có dữ liệu POST được gửi hay không
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Lấy giá trị product_id từ form
+            $this->model = $this->model("ProductsModel");
             $data = $this->model('ProductsModel');
             $title = 'UpdateProduct';
             $this->adminData['page_title'] = $title;

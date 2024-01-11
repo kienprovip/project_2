@@ -34,18 +34,6 @@ if (chatContentHeight) {
 }
 
 
-var updateProductButton = document.querySelector('.click-update_product');
-var updateProductShow = document.querySelector('.update-product_show');
-var closeUpdateProductButton = document.querySelector('.close-update_product');
-
-updateProductButton.addEventListener('click', function () {
-    updateProductShow.style.display = 'block';
-});
-
-closeUpdateProductButton.addEventListener('click', function () {
-    updateProductShow.style.display = 'none';
-});
-
 
 var addProductButton = document.querySelector('.click-add_product');
 var addProductShow = document.querySelector('.add-product_show');
@@ -58,7 +46,6 @@ addProductButton.addEventListener('click', function () {
 closeAddProductButton.addEventListener('click', function () {
     addProductShow.style.display = 'none';
 });
-
 
 var dashboardClick = document.querySelector('.dashboard-click');
 var analyticsClick = document.querySelector('.analytics-click');

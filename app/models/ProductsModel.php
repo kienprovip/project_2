@@ -18,7 +18,7 @@ class ProductsModel extends Model
     public function getListProduct()
     {
         $this->table = 'products';
-        $data = $this->db->query("SELECT * FROM $this->table")->fetchAll(PDO::FETCH_ASSOC);
+        $data = $this->db->query("SELECT * FROM $this->table WHERE product_status != -1")->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
     public function GetProductID($productId)
@@ -116,7 +116,7 @@ class ProductsModel extends Model
     {
         $this->table = 'products';
         $data = [
-            'product_status' => 0
+            'product_status' => -1
         ];
         $condition = 'product_id=' . $id;
         $DeleteP = $this->db->update($this->table, $data, $condition);

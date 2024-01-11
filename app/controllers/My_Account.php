@@ -98,10 +98,9 @@ class My_Account extends BaseController
 
     public function logout()
     {
-        if (isset($_SERVER['REQUEST_METHOD']) === 'POST') {
-            unset($_SESSION['customer']);
-            header('Location: /project_2/');
-        }
+        unset($_SESSION['customer']);
+        header('Location: /project_2/');
+        exit();
     }
     public function getCartQuantity()
     {

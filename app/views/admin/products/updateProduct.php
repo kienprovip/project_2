@@ -9,7 +9,7 @@
             </span>
         </div>
         <div class="update-product_form">
-            <form action="/project_2/Admin/UpdateProduct" method="POST">
+            <form action="/project_2/Admin/checkUpdateProduct" method="POST">
                 <div class="container">
                     <div class="row">
                         <?php
@@ -105,7 +105,6 @@
                                 <label class="product_description" for="update-product_description">Product Description</label> <br>
                                 <textarea name="productdescribe" id="update-product_description" cols="30" rows="3" class="w-100 p-2">"<?php echo $item['product_describe'] ?>"</textarea>
                             </div>
-
                     </div>
                 </div>
             <?php
@@ -114,8 +113,8 @@
             <div class="pb-5">
                 <input class="button-update px-5 py-1" type="submit" value="Update">
             </div>
-            </form>
         </div>
+        </form>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

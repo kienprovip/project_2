@@ -65,7 +65,7 @@
     <div class="search">
         <div class="container d-flex justify-content-end">
             <form action="/project_2/product/index" method="POST" class=" d-flex justify-content-end py-3 me-3">
-                <input type="text" name="search-product" class="me-3" placeholder="Product name">
+                <input type="text" name="search-product" class="me-3" placeholder="Product name" required>
                 <button name="search-button" class="p-0"><i class="bx bx-search"></i></button>
             </form>
         </div>
