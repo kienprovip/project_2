@@ -99,6 +99,7 @@ class My_Account extends BaseController
     public function logout()
     {
         unset($_SESSION['customer']);
+        unset($_SESSION['error_login']);
         header('Location: /project_2/');
         exit();
     }

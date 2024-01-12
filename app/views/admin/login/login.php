@@ -30,6 +30,11 @@
                             <label for="login-input_password" class="label-input_password d-flex justify-content-center align-items-center"><i class='bx bxs-lock-alt'></i></label>
                             <input type="password" id="login-input_password" name="password" class="input-input_password px-2" placeholder="Password">
                         </div>
+                        <div>
+                            <?php if (isset($_SESSION['error_login_admin']) && !empty($_SESSION['error_login_admin'])) {
+                                echo $_SESSION['error_login_admin'];
+                            } ?>
+                        </div>
                         <div class="my-3">
                             <input type="submit" value="Login" class="login-input_submit">
                         </div>

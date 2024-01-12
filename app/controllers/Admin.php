@@ -25,7 +25,9 @@ class Admin extends BaseController
     public function logout()
     {
         unset($_SESSION['admin']);
+        unset($_SESSION['error_login_admin']);
         header('Location: /project_2/admin/login');
+        exit();
     }
 
     public function loginCheck()
@@ -41,6 +43,7 @@ class Admin extends BaseController
                 header('Location: /project_2/admin/dashboard');
                 exit();
             } else {
+                $_SESSION['error_login_admin'] = 'The email or the password is incorrect!';
                 header('Location: /project_2/admin/login');
                 exit();
             }
@@ -135,7 +138,7 @@ class Admin extends BaseController
     {
         $this->model = $this->model('ProductsModel');
         $dataProduct = $this->model('ProductsModel');
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $count = $_POST['count'];
             $id = $_POST['productID'];
             $countAddVariation = $_POST['countAddVariation'];
@@ -316,7 +319,7 @@ class Admin extends BaseController
     public function addProduct()
     {
         $this->model = $this->model('ProductsModel');
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Xử lý dữ liệu từ form đăng ký, ví dụ: $_POST
             $countProduct = 0;
 
@@ -335,6 +338,10 @@ class Admin extends BaseController
             $newTimeZone = new DateTimeZone('Asia/Ho_Chi_Minh');
             $currentTime->setTimezone($newTimeZone);
             $dateTime = $currentTime->format('Y-m-d H:i:s');
+            $statusprd = 1;
+            if ($countProduct == 0) {
+                $statusprd = 0;
+            }
 
             $productData = [
                 'categoryid' => $_POST['categoryid'],
@@ -346,7 +353,7 @@ class Admin extends BaseController
                 'productthumbnail3' => $_POST['productthumbnail3'],
                 'productdescribe' => $_POST['productdescribe'],
                 'productdate' => $dateTime,
-                'productstatus' => 1,
+                'productstatus' => $statusprd,
                 'productquantity' => $countProduct,
             ];
 

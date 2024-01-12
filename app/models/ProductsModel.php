@@ -168,7 +168,7 @@ class ProductsModel extends Model
             'product_describe' => $productData['productdescribe'],
             'product_date' => $productData['productdate'],
             'product_sold' => 0,
-            'product_status' => 1,
+            'product_status' => $productData['productstatus'],
         ];
 
         $status = $this->db->insert($this->table, $data);
@@ -188,23 +188,23 @@ class ProductsModel extends Model
     public function addVariation($variationData)
     {
         $this->table = 'variations';
-        $data = [];
         $countVariation = 0;
         for ($i = 1; $i <= $_SESSION['variation_quantity']; $i++) {
-            $data = [
-                'product_id' => $this->lastId,
-                'color_name' => $variationData[$i]['colorname' . $i],
-                'size_name' => $variationData[$i]['sizename' . $i],
-                'variation_quantity' => $variationData[$i]['variationquantity' . $i],
-                'variation_status' => 1
-            ];
-
-            $countVariation += $variationData[$i]['variationquantity' . $i];
-
-            $statusV[$i] = $this->db->insert($this->table, $data);
-
-            if (!$statusV) {
-                return false; // If any variation fails to insert, return false immediately.
+            if (!empty($variationData)) {
+                if (!empty($variationData[$i]['colorname' . $i]) && !empty($variationData[$i]['sizename' . $i]) && !empty($variationData[$i]['variationquantity' . $i])) {
+                    $data = [
+                        'product_id' => $this->lastId,
+                        'color_name' => $variationData[$i]['colorname' . $i],
+                        'size_name' => $variationData[$i]['sizename' . $i],
+                        'variation_quantity' => $variationData[$i]['variationquantity' . $i],
+                        'variation_status' => 1
+                    ];
+                    $countVariation += $variationData[$i]['variationquantity' . $i];
+                    $statusV = $this->db->insert($this->table, $data);
+                    if (!$statusV) {
+                        return false;
+                    }
+                }
             }
         }
 
