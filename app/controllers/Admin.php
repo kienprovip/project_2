@@ -173,14 +173,16 @@ class Admin extends BaseController
             $total = $total_quantity + $total_Ivariationquantity;
 
 
-
-
+            $discount_percent = round((($_POST['productdiscount'] * 100) / $_POST['productprice']), 2);
+            $current_price = $_POST['productprice'] - $_POST['productdiscount'];
             // Xử lý dữ liệu từ form update, ví dụ: $_POST
             $userDataUP = [
                 'product_id' => $id,
                 'productimage' => $_POST['image'],
-                'productname' => $_POST['productname'],
+                'productname' => ucwords($_POST['productname']),
                 'productcost' => $_POST['productprice'],
+                'productcurrentprice' => $current_price,
+                'productdiscountpercent' => $discount_percent,
                 'product_discount_price' => $_POST['productdiscount'],
                 'product_thumbnail1' => $_POST['productthumbnail1'],
                 'product_thumbnail2' => $_POST['productthumbnail2'],
@@ -192,7 +194,7 @@ class Admin extends BaseController
             $userData = [
                 'product_id' => $id,
                 'productimage' => $_POST['imageUP'],
-                'productname' => $_POST['productname'],
+                'productname' => ucwords($_POST['productname']),
                 'productcost' => $_POST['productprice'],
                 'product_discount_price' => $_POST['productdiscount'],
                 'product_thumbnail1' => $_POST['productthumbnail1UP'],
@@ -203,6 +205,7 @@ class Admin extends BaseController
                 'product_quantity' => $total
 
             ];
+            echo $discount_percent;
             if (!empty($_POST['image']) && !empty($_POST['productthumbnail1']) && !empty($_POST['productthumbnail2']) && !empty($_POST['productthumbnail3'])) {
                 $productStatus = $this->model->UpdateProduct($userDataUP, $id);
             } else {
@@ -294,6 +297,7 @@ class Admin extends BaseController
             $id = $_POST['product_idD'];
             $this->model = $this->model("ProductsModel");
             $DeleteProduct = $this->model->DeleteProduct($id);
+            $deleteVariation = $this->model->deleteVariation($id);
             if ($DeleteProduct) {
                 header('Location: /project_2/admin/products');
                 exit();

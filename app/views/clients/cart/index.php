@@ -54,7 +54,7 @@
                                 <h6><?php echo $cart['product_name']; ?></h6>
                                 <p><?php echo $cart['color_name'] . ', ' . $cart['size_name']; ?></p>
                             </td>
-                            <td class="cart-price text-center"><?php echo $cart['product_current_price'] . '$' ?></td>
+                            <td class="cart-price text-center"><?php echo '$' . number_format($cart['product_current_price'], 2) ?></td>
                             <td class="cart-quantity text-center ">
                                 <form action="/project_2/cart/changeQuantity" method="POST">
                                     <button class="minus-variation px-1" name="minus" id="minus-variation_from_cart"><i class='bx bx-minus'></i></button>
@@ -68,7 +68,8 @@
                                     <button class="plus-variation px-1" name="plus" id="plus-variation_from_cart"><i class='bx bx-plus'></i></button>
                                 </form>
                             </td>
-                            <td class="cart-total text-center"><?php echo $total =  $cart['cart_quantity'] * $cart['product_current_price']; ?></td>
+                            <td class="cart-total text-center"><?php $total =  $cart['cart_quantity'] * $cart['product_current_price'];
+                                                                echo '$' . number_format($total, 2) ?></td>
                             <input type="text" name="price<?php echo $countCart ?>" value="<?php echo $total =  $cart['cart_quantity'] * $cart['product_current_price']; ?>" hidden>
                             <td class="cart-delete text-center">
                                 <form action="/project_2/cart/deleteOne" method="POST">
@@ -126,20 +127,20 @@
                         <div class="cart-total_content">
                             <div class="cart-total_subtotal d-flex justify-content-between ps-3">
                                 <p class="title m-0 py-5 fw-bold">Subtotal</p>
-                                <p class="price m-0 py-5" id="total-from_cart">0</p>
+                                <p class="price m-0 py-5">$<span id="total-from_cart">0</span>.00</p>
                             </div>
                             <div class="cart-total_offer d-flex justify-content-between ps-3">
                                 <p class="title m-0 pb-5 fw-bold">Coupon</p>
-                                <p class="price m-0 pb-5" id="coupon-from_cart">0</p>
+                                <p class="price m-0 pb-5">$<span id="coupon-from_cart">0</span>.00</p>
                             </div>
                             <div class="cart-total_shipping d-flex justify-content-between ps-3">
                                 <p class="title m-0 pb-5 fw-bold">Shipping</p>
-                                <p class="price m-0 pb-5" id="shipping-from_cart">5</p>
+                                <p class="price m-0 pb-5">$<span id="shipping-from_cart">5</span>.00</p>
                             </div>
                             <hr class="m-0 mx-3">
                             <div class="cart-total_total d-flex justify-content-between ps-3">
                                 <p class="title py-5 fw-bold">Total</p>
-                                <p class="price py-5" id="totalPrice-from_cart">5</p>
+                                <p class="price py-5">$<span id="totalPrice-from_cart">5</span>.00</p>
                             </div>
                             <div class="checkout d-flex justify-content-center mb-5">
                                 <div>

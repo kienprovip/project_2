@@ -71,7 +71,7 @@ class Cart extends BaseController
         if (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_SESSION['customer'][0])) {
             $this->model = $this->model('ProductModel');
             $dataVariationId = $this->model('ProductModel');
-            $variationId = $dataVariationId->getVariationId($_POST['product_id'], $_POST['color'], $_POST['size']);
+            $variationId = $_POST['variation_id'];
             $this->model = $this->model('CartModel');
             $data = $this->model('CartModel');
             $issetCart = $data->getCart();
@@ -332,12 +332,11 @@ class Cart extends BaseController
         if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
             $dataCart = $this->model('CartModel');
             $getCart = $dataCart->getCart();
-            $dataToUpdate = [];
             foreach ($getCart as $cart) {
                 $this->model = $this->model('ProductModel');
                 $dataProduct = $this->model('ProductModel');
                 $getProductQuantity = $dataProduct->getProductToUpdate($cart['product_id']);
-                $getVariationQuantity = $dataProduct->getVariationQuantity($cart['variation_quantity']);
+                $getVariationQuantity = $dataProduct->getVariationQuantity($cart['variation_id']);
                 $productQuantity = 1;
                 $variationQuantity = 1;
                 foreach ($getProductQuantity as $product) {

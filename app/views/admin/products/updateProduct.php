@@ -60,7 +60,7 @@
                                             </div>
                                             <div class="col-lg-4 mb-3">
                                                 <p class="text-start">Quantity</p>
-                                                <input class=" p-1 variation-quantity w-100" type="number" name="variationquantity<?php echo $count ?>" min="1" placeholder="Quantity" value="<?php echo $item1['variation_quantity'] ?>">
+                                                <input class=" p-1 variation-quantity w-100" type="number" name="variationquantity<?php echo $count ?>" min="0" placeholder="Quantity" value="<?php echo $item1['variation_quantity'] ?>">
                                             </div>
                                         </div>
                                     </div>

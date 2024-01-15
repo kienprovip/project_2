@@ -623,7 +623,7 @@ main .product-detail .product-detail_thumbnail div img {
     width: 100%;
 }
 
-main .product-detail .product-price .product-cost h5 del {
+main .product-detail .product-price .product-cost h3 del {
     color: gray;
 }
 
@@ -722,8 +722,33 @@ main .product-detail .reviews-content .review {
     padding-left: 75px;
 }
 
-main .product-detail .reviews-content .a-content{
+main .product-detail .reviews-content .a-content {
     border: 1px solid #b19361;
+}
+
+main .product-detail .variation-choice_detail {
+    border: 1px solid #b19361;
+}
+
+main .product-detail .variation-choice_detail-disable {
+    background-color: #dddddd;
+}
+
+main .product-detail .variation-choice_detail-disable:hover{
+    cursor: not-allowed;
+}
+
+main .product-detail .variation-choice_detail:hover {
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #b19361;
+    color: #fff;
+}
+
+main .product-detail .stars-reviews_solds {
+    color: #777;
 }
 
 

@@ -36,7 +36,7 @@
                     <div class="title">
                         <h6 class="text-center py-2">Free Shipping</h6>
                     </div>
-                    <p class="text-center">Get 10% cash back, free shipping, free returns, and more at 1000+ top retailers!</p>
+                    <p class="text-center">Free shipping for order has minimum tatal is $250.00</p>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 col-12 mb-5">
@@ -171,7 +171,7 @@
                                 <div class="card-content">
                                     <input type="text" value="<?php $item['product_id']; ?>" hidden name="product_id">
                                     <p class="card-title text-center fw-bold"><?php echo $item['product_name']; ?></p>
-                                    <p class="card-text text-center fw-bold"><?php echo $item['product_current_price'] . '$'; ?></p>
+                                    <p class="card-text text-center fw-bold"><?php echo '$' . number_format($item['product_current_price'], 2); ?></p>
                                 </div>
                                 <div class="buy-detail d-none justify-content-center position-absolute top-0 bottom-0 start-0 end-0">
                                     <div class="detail ms-2 d-flex align-items-center">
@@ -217,7 +217,7 @@
                                 <div class="card-content">
                                     <input type="text" value="<?php $item['product_id']; ?>" hidden name="product_id">
                                     <p class="card-title text-center fw-bold"><?php echo $item['product_name']; ?></p>
-                                    <p class="card-text text-center fw-bold"><?php echo $item['product_current_price'] . '$'; ?></p>
+                                    <p class="card-text text-center fw-bold"><?php echo '$' . number_format($item['product_current_price'], 2); ?></p>
                                 </div>
                                 <div class="buy-detail d-none justify-content-center position-absolute top-0 bottom-0 start-0 end-0">
 

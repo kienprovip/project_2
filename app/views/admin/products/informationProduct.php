@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-lg-4 mb-3 text-start">
                             <p>Product price</p>
-                            <input disabled type="text" placeholder="Product price" name="productprice" class="p-2 input-product_price" value="<?php echo $item['product_cost']; ?>">
+                            <input disabled type="text" placeholder="Product price" name="productprice" class="p-2 input-product_price" value="<?php echo $item['product_current_price']; ?>">
                         </div>
                         <div class="col-lg-4 mb-3 text-start">
                             <p>Product discount</p>

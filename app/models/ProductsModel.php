@@ -42,6 +42,8 @@ class ProductsModel extends Model
             'product_image' => $productData['productimage'],
             'product_name' => $productData['productname'],
             'product_cost' => $productData['productcost'],
+            'product_current_price' => $productData['productcurrentprice'],
+            'product_discount_percent' => $productData['productdiscountpercent'],
             'product_discount_price' => $productData['product_discount_price'],
             'product_thumbnail1' => $productData['product_thumbnail1'],
             'product_thumbnail2' => $productData['product_thumbnail2'],
@@ -121,6 +123,20 @@ class ProductsModel extends Model
         $condition = 'product_id=' . $id;
         $DeleteP = $this->db->update($this->table, $data, $condition);
         if (!$DeleteP) {
+            return false;
+        }
+        return true;
+    }
+
+    public function deleteVariations($id)
+    {
+        $this->table = 'variations';
+        $data = [
+            'variation_status' => -1
+        ];
+        $condition = 'product_id = ' . $id;
+        $status = $this->db->update($this->table, $data, $condition);
+        if (!$status) {
             return false;
         }
         return true;

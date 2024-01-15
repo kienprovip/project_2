@@ -9,6 +9,7 @@
                 <div class="col-lg-5">
                     <div class="product-detail_image text-center">
                         <img src="http://localhost/project_2/public/assets/clients/images/<?php echo $item['product_image'] ?>" class="thumbnail-show" alt="">
+
                     </div>
                     <div class="product-detail_thumbnail d-flex justify-content-center mt-2">
                         <div class="d-flex justify-content-center align-items-center mx-1" onclick="toggleThumbnail0()">
@@ -26,58 +27,46 @@
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <h3 class="product-name"><?php echo $item['product_name'] ?></h3>
-                    <div class="product_date me-3">Product date: <span class="fw-bold"><?php echo $item['product_date']; ?></span></div>
-                    <div class=" stars-reviews_solds d-flex ">
-                        <div class="solds">Sold: <span class="fw-bold"><?php echo $item['product_sold']; ?></span></div>
-                        <div class="quantity ms-3">Quantity: <span id="product_quantity_change" class="fw-bold"><?php echo $item['product_quantity']; ?></span></div>
+                    <h3 class="product-name fw-bold"><?php echo $item['product_name'] ?></h3>
+                    <div class="stars-reviews_solds">
+                        <div class="solds">Sold: <span><?php echo $item['product_sold']; ?></span></div>
+                        <div class="quantity">Quantity: <span id="product_quantity_change"><?php echo $item['product_quantity']; ?></span></div>
                     </div>
                     <div class="product-price d-flex mt-3">
-                        <div class="product-cost">
-                            <h5><del><?php if ($item['product_discount_price'] !== '0') {
-                                            echo $item['product_cost'] . '$';
-                                        } ?></del></h5>
+
+                        <div class="product-price me-3">
+                            <h3 class="mb-0 fw-bold"><?php echo '$' . number_format($item['product_current_price'], 2); ?></h3>
                         </div>
-                        <div class="product-price">
-                            <h3><?php echo $item['product_current_price'] . '$'; ?></h3>
-                        </div>
-                        <div class="product-discount_percent">
-                            <h6 class="px-2"><?php if ($item['product_discount_percent'] !== '0') {
-                                                    echo $item['product_discount_percent'] . '% Off';
-                                                } ?></h6>
-                        </div>
+
+
                     </div>
                     <form action="/project_2/Cart/addToCart" method="POST">
-                        <div class="product-variation">
-                            <div class="product-color d-flex mt-3">
-                                <div class="me-4">Color: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-
-                                <?php $colors = explode(',', $item['colors']);
-                                foreach ($colors as $color) {
-                                    echo '<div class="me-3">
-                                <input class="px-2 py-1" type="radio" name="color" value="' . $color . '" id="variation-color_' . $color . '" data-quantity="' . $item['variation_quantity'] . '">
-                                <label for="variation-color_' . $color . '">' . $color . '</label>
-                            </div>';
-                                }
-                                ?>
+                        <div class="product-variation mt-3">
+                            <div class="d-flex">
+                                <div class="me-4">Variation:&nbsp</div>
+                                <div class="d-flex flex-wrap">
+                                    <?php foreach ($data['variations_list'] as $variation) { ?>
+                                        <?php if ($variation['variation_quantity'] == 0) {
+                                        ?>
+                                            <div class="mb-3">
+                                                <label class="variation-choice_detail-disable px-3 py-1 me-3" for="variation<?php echo $variation['variation_id'] ?>">
+                                                    <input hidden disabled type="radio" id="variation<?php echo $variation['variation_id'] ?>" name="variation_id" value="<?php echo $variation['variation_id'] ?>" onclick="updateBackgroundColor(this)">
+                                                    <?php echo $variation['color_name'] . ' - ' . $variation['size_name'] ?>
+                                                </label>
+                                            </div>
+                                        <?php
+                                        } else { ?>
+                                            <div class="mb-3">
+                                                <label class="variation-choice_detail px-3 py-1 me-3" for="variation<?php echo $variation['variation_id'] ?>">
+                                                    <input hidden type="radio" id="variation<?php echo $variation['variation_id'] ?>" name="variation_id" value="<?php echo $variation['variation_id'] ?>" onclick="updateBackgroundColor(this)">
+                                                    <?php echo $variation['color_name'] . ' - ' . $variation['size_name'] ?>
+                                                </label>
+                                            </div>
+                                    <?php }
+                                    } ?>
+                                </div>
                             </div>
-                            <div class="product-size d-flex mt-3">
-                                <div class="me-4">Size: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                                <?php $sizes = explode(',', $item['sizes']);
-                                usort($sizes, function ($a, $b) {
-                                    $order = array('S', 'M', 'L', 'XL');
-                                    return array_search($a, $order) - array_search($b, $order);
-                                });
-                                foreach ($sizes as $size) {
-                                    echo '<div class="me-3">
-                                <input class="px-2 py-1" type="radio" name="size" value="' . $size . '" id="variation-size_' . $size . '" data-quantity="' . $item['variation_quantity'] . '">
-
-                                <label for="variation-size_' . $size . '">' . $size . '</label>
-                            </div>';
-                                }
-                                ?>
-                            </div>
-                            <div class="product-quantity mt-3">
+                            <div class="product-quantity my-3">
                                 <span class="me-4">Quantity: </span>
                                 <span class="px-2 minus-variation" style="pointer-events: none;" id="minus-variation"><i class='bx bx-minus'></i></span>
                                 <input type="text" value="1" id="chooce-variation_quantity" name="product_quantity" disabled class="text-center">
@@ -86,11 +75,15 @@
                         </div>
                         <input type="text" name="product_id" hidden value="<?php echo $item['product_id']; ?>">
                         <input type="text" name="product_quantity_current" value="<?php echo $item['product_quantity']; ?>" hidden>
-                        <button class="add-to_cart px-5 py-2 mt-5" id="add-to_cartfromproduct_detail" disabled>Add to cart</button>
+                        <div class="d-flex justify-content-center d-lg-block">
+                            <span class="d-none d-lg-inline-block">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                            <button class="add-to_cart px-5 py-2 mt-3" id="add-to_cartfromproduct_detail" disabled>Add to cart</button>
+                        </div>
                     </form>
                 </div>
                 <div class="product-detail_tablist d-flex justify-content-center my-5">
                     <div class="description-tablist me-3">
+
                         <button class="px-3 py-1" onclick="toggleDescription()">Description</button>
                     </div>
                     <div class="reviews-tablist ms-3" onclick="toggleReviews()">
@@ -130,34 +123,38 @@
     </div>
 
     <script>
+        function updateBackgroundColor(checkbox) {
+            var checkboxes = document.getElementsByName('variation_id');
+
+            // Xóa lớp CSS "selected" từ tất cả các checkbox
+            checkboxes.forEach(function(otherCheckbox) {
+                if (otherCheckbox !== checkbox) {
+                    otherCheckbox.parentElement.classList.remove('selected');
+                }
+            });
+
+            // Nếu checkbox này được chọn, thêm lớp CSS "selected"
+            if (checkbox.checked) {
+                checkbox.parentElement.classList.add('selected');
+            } else {
+                // Nếu checkbox này không được chọn, xóa lớp CSS "selected"
+                checkbox.parentElement.classList.remove('selected');
+            }
+        }
         document.addEventListener('DOMContentLoaded', function() {
             var variationQuantity = 1; // Set a default variation quantity
             var variationsList = <?php echo json_encode($data['variations_list']); ?>;
-            var colors = <?php echo json_encode($colors); ?>;
-            var sizes = <?php echo json_encode($sizes); ?>;
 
-            var colorInputs = document.querySelectorAll('input[name="color"]');
-            var sizeInputs = document.querySelectorAll('input[name="size"]');
+            var variationInputs = document.querySelectorAll('input[name="variation_id"]');
             var quantityInput = document.getElementById('chooce-variation_quantity');
             var disableAddToCart = document.getElementById('add-to_cartfromproduct_detail');
             var minusButton = document.getElementById('minus-variation');
             var plusButton = document.getElementById('plus-variation');
 
-            function updateSizeOptions(selectedColor) {
-                sizeInputs.forEach(function(sizeInput) {
-                    sizeInput.disabled = !isOptionAvailable(selectedColor, sizeInput.value, 'color_name', 'size_name');
-                });
-            }
 
-            function updateColorOptions(selectedSize) {
-                colorInputs.forEach(function(colorInput) {
-                    colorInput.disabled = !isOptionAvailable(selectedSize, colorInput.value, 'size_name', 'color_name');
-                });
-            }
-
-            function updateVariationQuantity(selectedColor, selectedSize) {
+            function updateVariationQuantity(selectedVariation) {
                 for (var i = 0; i < variationsList.length; i++) {
-                    if (variationsList[i]['color_name'] == selectedColor && variationsList[i]['size_name'] == selectedSize) {
+                    if (variationsList[i]['variation_id'] == selectedVariation) {
                         variationQuantity = variationsList[i]['variation_quantity'];
                         document.getElementById("product_quantity_change").textContent = variationQuantity;
                         break; // Stop the loop once a match is found
@@ -165,20 +162,12 @@
                 }
             }
 
-            function isOptionAvailable(selectedOption, value, optionType1, optionType2) {
-                for (var i = 0; i < variationsList.length; i++) {
-                    if (variationsList[i][optionType1] == selectedOption && variationsList[i][optionType2] == value) {
-                        return true;
-                    }
-                }
-                return false;
-            }
+
 
             function checkSelection() {
-                var selectedColor = document.querySelector('input[name="color"]:checked');
-                var selectedSize = document.querySelector('input[name="size"]:checked');
-                if (selectedColor && selectedSize) {
-                    updateVariationQuantity(selectedColor.value, selectedSize.value);
+                var selectedVatiation = document.querySelector('input[name="variation_id"]:checked');
+                if (selectedVatiation) {
+                    updateVariationQuantity(selectedVatiation.value);
                     quantityInput.value = 1;
                     quantityInput.disabled = false;
                     disableAddToCart.disabled = false;
@@ -193,16 +182,8 @@
                 }
             }
 
-            colorInputs.forEach(function(colorInput) {
+            variationInputs.forEach(function(colorInput) {
                 colorInput.addEventListener('change', function() {
-                    updateSizeOptions(colorInput.value);
-                    checkSelection();
-                });
-            });
-
-            sizeInputs.forEach(function(sizeInput) {
-                sizeInput.addEventListener('change', function() {
-                    updateColorOptions(sizeInput.value);
                     checkSelection();
                 });
             });

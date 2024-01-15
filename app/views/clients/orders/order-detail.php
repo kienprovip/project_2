@@ -74,19 +74,19 @@
                             <div class="col-sm-6">
                                 <div class="mx-3 px-3 mb-3 py-1 total d-flex justify-content-between">
                                     <p class="mb-0 pb mb-0 py-1-0 fw-bold">Discount </p>
-                                    <p class="mb-0 pb-0 fw-bold"><?php echo $order['discount_price']; ?></p>
+                                    <p class="mb-0 pb-0 fw-bold"><?php echo '$' . number_format($order['discount_price'], 2); ?></p>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="mx-3 px-3 mb-3 py-1 total d-flex justify-content-between">
                                     <p class="mb-0 pb mb-0 py-1-0 fw-bold">Shipping </p>
-                                    <p class="mb-0 pb-0 fw-bold"><?php echo $order['shipping_price']; ?></p>
+                                    <p class="mb-0 pb-0 fw-bold"><?php echo '$' . number_format($order['shipping_price'], 2); ?></p>
                                 </div>
                             </div>
                         </div>
                         <div class="total my-3 mx-3 px-3 py-3 d-flex justify-content-between">
                             <p class="into-money mb-0 fw-bold">Total</p>
-                            <p class="price-total mb-0 fw-bold"><?php echo $order['order_price']; ?></p>
+                            <p class="price-total mb-0 fw-bold"><?php echo '$' . number_format($order['order_price'], 2); ?></p>
                         </div>
                         <div class="time-order mx-3 px-3 py-3 d-flex justify-content-between">
                             <p class="order">Time order</p>

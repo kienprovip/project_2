@@ -35,7 +35,7 @@
                                     </th>
                                     <td scope="row"><?php echo $item['product_id'] ?></td>
                                     <td><?php echo $item['product_name'] ?></td>
-                                    <td class="text-center"><?php echo $item['product_cost'] ?></td>
+                                    <td class="text-center"><?php echo $item['product_current_price'] ?></td>
                                     <td>
                                         <div class="text-center justify-content-center d-flex">
                                             <span class="me-2 click-delete_product">

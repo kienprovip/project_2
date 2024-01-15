@@ -124,7 +124,7 @@
                                             <div class="card-content">
                                                 <input type="text" value="<?php $item['product_id']; ?>" hidden name="product_id">
                                                 <p class="card-title text-center fw-bold"><?php echo $item['product_name']; ?></p>
-                                                <p class="card-text text-center fw-bold"><?php echo $item['product_current_price'] . '$'; ?></p>
+                                                <p class="card-text text-center fw-bold"><?php echo '$' . number_format($item['product_current_price'], 2); ?></p>
                                             </div>
                                             <div class="buy-detail d-none justify-content-center position-absolute top-0 bottom-0 start-0 end-0">
                                                 <div class="detail ms-2 d-flex align-items-center">

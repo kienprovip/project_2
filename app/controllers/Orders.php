@@ -149,7 +149,6 @@ class Orders extends BaseController
                             'couponquantity' => $_SESSION['coupon_quantity'],
                             'couponstatus' => $_SESSION['coupon_status']
                         ];
-                        echo $_SESSION['coupon_code'];
                         $sendUpdateCoupon = $dataCoupon->updateCoupon($_SESSION['coupon_id'], $dataUpdateCoupon);
                     }
 

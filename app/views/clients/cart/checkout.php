@@ -99,13 +99,13 @@
                                     <?php
                                     $total = 0;
                                     foreach ($_SESSION['checkout'] as $item) { ?>
-                                        <div class="product-price ps-2 py-3"><?php echo $item[0]['product_current_price'] * $item[0]['cart_quantity']; ?></div>
+                                        <div class="product-price ps-2 py-3"><?php echo '$' . number_format(($item[0]['product_current_price'] * $item[0]['cart_quantity']), 2); ?></div>
                                     <?php $total += $item[0]['product_current_price'] * $item[0]['cart_quantity'];
                                     } ?>
-                                    <div class="cart-subtotal_price ps-2 py-3"><?php echo $total; ?></div>
-                                    <div class="offer-price ps-2 py-3"><?php echo $_SESSION['checkout_cart_discount']; ?></div>
-                                    <div class="shipping-price ps-2 py-3"><?php echo $_SESSION['checkout_cart_shipping']; ?></div>
-                                    <div class="order-total_price ps-2 py-3"><?php echo $_SESSION['checkout_cart_total']; ?></div>
+                                    <div class="cart-subtotal_price ps-2 py-3"><?php echo '$' . number_format($total, 2); ?></div>
+                                    <div class="offer-price ps-2 py-3"><?php echo '$' . number_format($_SESSION['checkout_cart_discount'], 2); ?></div>
+                                    <div class="shipping-price ps-2 py-3"><?php echo '$' . number_format($_SESSION['checkout_cart_shipping'], 2); ?></div>
+                                    <div class="order-total_price ps-2 py-3"><?php echo '$' . number_format($_SESSION['checkout_cart_total'], 2); ?></div>
                                 </div>
                             </div>
                             <div class="payment ps-2 mt-3">

@@ -166,7 +166,7 @@ class ProductModel extends Model
     public function getVariations($id)
     {
         $this->table = 'variations';
-        $data = $this->db->query("SELECT color_name, size_name, variation_quantity FROM $this->table WHERE product_id = $id AND variation_status = 1")->fetchAll(PDO::FETCH_ASSOC);
+        $data = $this->db->query("SELECT variation_id, color_name, size_name, variation_quantity FROM $this->table WHERE product_id = $id AND variation_status != -1")->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
 
